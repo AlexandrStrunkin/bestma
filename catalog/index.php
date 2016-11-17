@@ -1,8 +1,8 @@
 <?require($_SERVER["DOCUMENT_ROOT"]."/bitrix/header.php");
 $APPLICATION->SetTitle("Каталог");
 $APPLICATION->IncludeComponent(
-	"bitrix:catalog", 
-	"main", 
+	"bitrix:catalog",
+	"main",
 	array(
 		"IBLOCK_TYPE" => "catalog",
 		"IBLOCK_ID" => "3",
@@ -112,7 +112,10 @@ $APPLICATION->IncludeComponent(
 		"COMPARE_ELEMENT_SORT_ORDER" => "asc",
 		"DISPLAY_ELEMENT_SELECT_BOX" => "N",
 		"PRICE_CODE" => array(
-			0 => "BASE",
+			0 => "PRICE_WHS_1",
+			1 => "PRICE_WHS_2",
+			2 => "BASE",
+			3 => "PRICE_WHS_3",
 		),
 		"USE_PRICE_COUNT" => "N",
 		"SHOW_PRICE_COUNT" => "1",
@@ -351,9 +354,9 @@ $APPLICATION->IncludeComponent(
 		"DETAIL_BACKGROUND_IMAGE" => "-",
 		"DISPLAY_ELEMENT_SLIDER" => "10",
 		"SHOW_ONE_CLICK_BUY" => "Y",
-		"USE_GIFTS_DETAIL" => "Y",
+		"USE_GIFTS_DETAIL" => "N",
 		"USE_GIFTS_SECTION" => "Y",
-		"USE_GIFTS_MAIN_PR_SECTION_LIST" => "Y",
+		"USE_GIFTS_MAIN_PR_SECTION_LIST" => "N",
 		"GIFTS_DETAIL_PAGE_ELEMENT_COUNT" => "8",
 		"GIFTS_DETAIL_HIDE_BLOCK_TITLE" => "N",
 		"GIFTS_DETAIL_BLOCK_TITLE" => "Выберите один из подарков",

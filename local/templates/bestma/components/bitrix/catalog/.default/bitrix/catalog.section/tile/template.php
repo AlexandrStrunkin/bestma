@@ -82,7 +82,7 @@
                 </form>
             </div>
         </li>
-    <? endforeach; // foreach($arResult["ITEMS"] as $arElement):  ?>
+    <? endforeach; // foreach($arResult["ITEMS"] as $arElement):  ?> 
     <?=$arResult['DESCRIPTION']?>
 </ul>
 <? if ($arParams["DISPLAY_BOTTOM_PAGER"]): ?>

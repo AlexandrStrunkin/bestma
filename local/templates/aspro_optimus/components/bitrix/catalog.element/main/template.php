@@ -1334,6 +1334,7 @@ setViewedProduct(<?=$arResult['ID']?>, <?=CUtil::PhpToJSObject($arViewedData, fa
 </div>
 
 <div class="gifts">
+<?CModule::IncludeModule('main');?>
 <?if ($arResult['CATALOG'] && $arParams['USE_GIFTS_DETAIL'] == 'Y' && \Bitrix\Main\ModuleManager::isModuleInstalled("sale"))
 {
 	$APPLICATION->IncludeComponent("bitrix:sale.gift.product", "main", array(
@@ -1483,7 +1484,7 @@ if ($arResult['CATALOG'] && $arParams['USE_GIFTS_MAIN_PR_SECTION_LIST'] == 'Y' &
 ?>
 </div>
 
-<script type="text/javascript">	
+<script type="text/javascript">
 	BX.message({
 		QUANTITY_AVAILIABLE: '<? echo COption::GetOptionString("aspro.optimus", "EXPRESSION_FOR_EXISTS", GetMessage("EXPRESSION_FOR_EXISTS_DEFAULT"), SITE_ID); ?>',
 		QUANTITY_NOT_AVAILIABLE: '<? echo COption::GetOptionString("aspro.optimus", "EXPRESSION_FOR_NOTEXISTS", GetMessage("EXPRESSION_FOR_NOTEXISTS"), SITE_ID); ?>',
@@ -1491,7 +1492,7 @@ if ($arResult['CATALOG'] && $arParams['USE_GIFTS_MAIN_PR_SECTION_LIST'] == 'Y' &
 		ADD_ERROR_COMPARE: '<? echo GetMessage("ADD_ERROR_COMPARE"); ?>',
 		ONE_CLICK_BUY: '<? echo GetMessage("ONE_CLICK_BUY"); ?>',
 		SITE_ID: '<? echo SITE_ID; ?>'
-	})	
+	})
 </script>
 <!--http://schema.org --->
 

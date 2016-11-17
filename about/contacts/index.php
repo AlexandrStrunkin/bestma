@@ -22,9 +22,10 @@ $APPLICATION->SetTitle("Контакты");
 			 <script type="text/javascript" charset="utf-8" src="//api-maps.yandex.ru/services/constructor/1.0/js/?sid=8epU0QQxzPlhaFn9cvi30eAlts72dU_-&width=300&height=300"></script>
 		</div>
 		<ul class="contacts_list">
-			<li class="phone"> <strong><span style="font-size: 13px;">Телефон интернет магазина BESTMA.RU</span></strong><span style="font-size: 16px;">&nbsp; </span> <br>
- <span style="font-size: 13px;"> +7 (495) 729-20-25&nbsp; <br>
-			 +7 (903) 729-20-25<b><span style="color: #ff0000;"> доступны WhatsApp, Viber</span></b></span></li>
+			<li class="phone"><span style="color: #000000;"> </span><strong><span style="font-size: 13px; color: #000000;">Телефон интернет магазина BESTMA.RU</span></strong><span style="font-size: 16px; color: #000000;">&nbsp; </span><span style="color: #000000;"> </span><br>
+			<span style="color: #000000;"> </span><span style="font-size: 13px;"><span style="color: #000000;"> +7 (495) 729-20-25&nbsp; </span><br>
+			<span style="color: #000000;">
+			+7 (903) 729-20-25</span><b><span style="color: #ff0000;"> доступны WhatsApp, Viber</span></b></span></li>
 		</ul>
 		<div>
  <span style="font-size: 13px;"><b><span style="color: #ff0000;">&nbsp; &nbsp; &nbsp; &nbsp; &nbsp; </span><span style="color: #000000;">Отдел реализации:</span></b></span>
@@ -62,12 +63,12 @@ $APPLICATION->SetTitle("Контакты");
  </span></span></b>
 		</div>
 		<ul class="contacts_list">
-			<li class="mail"><span style="font-size: 13px;"><b style="font-weight: bold;">Для дополнительных вопросов</b> <br>
+			<li class="mail" style="color: #000000;"><span style="font-size: 13px;"><b style="font-weight: bold;">Для дополнительных вопросов</b> <br>
  <b> &nbsp;</b> <a href="mailto:bestma@inbox.ru">bestma@inbox.ru</a>&nbsp;</span></li>
-			<li class="l_address"><span style="font-size: 13px;"><strong style="font-weight: bold;">Юридический адрес</strong> <br>
+			<li class="l_address" style="color: #000000;"><span style="font-size: 13px;"><strong style="font-weight: bold;">Юридический адрес</strong> <br>
  <b> &nbsp;</b>ИП "Соломатина Екатерина Игоревна", &nbsp;111531, г. Москва, &nbsp;шоссе Энтузиастов д.94<b> &nbsp; &nbsp; &nbsp; &nbsp; </b> <br>
  <b> &nbsp;&nbsp;</b></span></li>
-			<li class="office_address"> <span style="font-size: 13px;"><strong style="font-weight: bold;">Главный офис</strong> <br>
+			<li class="office_address" style="color: #000000;"> <span style="font-size: 13px;"><strong style="font-weight: bold;">Главный офис</strong> <br>
 			 КОМПAНИЯ BESTMA <br>
 			 (Оптовая продажа аксессуаров к сотовым телефонам) <br>
 			 Aдрес: г.Москвa, ул. Докукинa, дом 10 <br>
