@@ -13,6 +13,14 @@ var funcDefined = function(func){
 	}
 }
 
+$(document).ready(function(){
+    var products_name = document.querySelectorAll(".preview_text");
+    Array.prototype.forEach.call(products_name, function(product, i){
+        $clamp(product, {clamp: 3});
+    });    
+});
+
+
 if(!funcDefined('setLocationSKU')){
 	function setLocationSKU(ID){
 		var objUrl = parseUrlQuery(),
@@ -2741,12 +2749,12 @@ $(document).ready(function(){
 			$(this).addClass('open');
 		}
 	})
-	$(document).on('mouseenter', '.display_list .item_wrap', function(){
+	/*$(document).on('mouseenter', '.display_list .item_wrap', function(){
 		$(this).prev().addClass('prev');
 	});
 	$(document).on('mouseleave', '.display_list .item_wrap', function(){
 		$(this).prev().removeClass('prev');
-	});
+	});*/
 	$(document).on('mouseenter', '.catalog_block .item_wrap', function(){
 		$(this).addClass('shadow_delay');
 	});
