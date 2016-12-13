@@ -1698,8 +1698,8 @@ div.item-title a span {padding:0px 0px 0px;}
     position: absolute;
     background: #fff;
     z-index: 5;
-    top: 0;
-    right: 0;
+    top: -15px;
+    right: -215px;
     height: 34px;
     width: 144px;
     padding: 24px;

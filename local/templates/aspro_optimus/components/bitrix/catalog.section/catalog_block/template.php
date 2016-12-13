@@ -118,7 +118,7 @@
                                 $miniatureCount = 4;
                                 $counter = 1;
                                 ?>
-                                <div class="photo_miniature first">
+                                <div class="photo_miniature first active">
                                 <?if( !empty($arItem["PREVIEW_PICTURE"]) ):?>
                                     <?$img = CFile::ResizeImageGet($arItem["PREVIEW_PICTURE"]["ID"], array( "width" => 38, "height" => 38 ), BX_RESIZE_IMAGE_PROPORTIONAL, true, array());?> 
                                     <img border="0" src="<?=$img["src"]?>"/>

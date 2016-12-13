@@ -12,7 +12,7 @@ if (isset($templateData['TEMPLATE_LIBRARY']) && !empty($templateData['TEMPLATE_L
 	<script type="text/javascript">
 		BX.Currency.setCurrencies(<? echo $templateData['CURRENCIES']; ?>);
         //Слайдер
-        $(".photo_miniature").on("click", function() {
+        $(".photo_miniature").on("mouseover", function() {
             $(this).siblings(".photo_miniature").removeClass('active');       
             $(this).addClass('active'); 
             var index = $(this).index();

@@ -1,6 +1,6 @@
     <script type="text/javascript">
         //Слайдер
-        $(".photo_miniature").on("click", function() {
+        $(".photo_miniature").on("mouseover", function() {
             $(this).siblings(".photo_miniature").removeClass('active');       
             $(this).addClass('active'); 
             var index = $(this).index();

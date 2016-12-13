@@ -717,7 +717,7 @@ body .left_block .left_menu li.exit a:before { display:inline-block !important; 
 .table .module_products_list tr.item > th:first-child {border-left: 0px solid #00a2a1;}
 .table .module_products_list tr.item > th:last-child {border-right: 0px solid #00a2a1;}
 
-.table .module_products_list td.item-name-cell { text-align: left; padding: 0px; min-width: 247px;}
+.table .module_products_list td.item-name-cell { text-align: left; padding: 0px; min-width: 247px; max-width: 247px; overflow: hidden;}
 .table .module_products_list td.item-name-cell a { font-family:'ClearSans-Medium' ;font-size: 14px; line-height: 22px; font-weight: 400; color: #585858; }
 .table .module_products_list tr.item td.item-name-cell a:hover { color: #00a2a1; }
 .table .module_products_list td.price-cell { text-align: center; width: 95px;}
@@ -767,7 +767,7 @@ body .left_block .left_menu li.exit a:before { display:inline-block !important; 
 .module_products_list .rating, .module_products_list .item-stock{display:inline-block;vertical-align:middle;margin:0px;padding-bottom:5px;}
 .module_products_list .item-stock{padding-bottom:6px;}
 
-.table .module_products_list .item-stock{padding-bottom:0px; width: 52px; height: 52px; background: transparent; border-radius: 26px; }
+.table .module_products_list .item-stock{padding-bottom:0px; width: 52px; height: 52px; background: transparent; border-radius: 26px; position:relative;}
 .table .module_products_list .item-stock:hover{background: #f5f5f5;} 
 .table .module_products_list td.like_icons { width: 92px; position: relative;top: 0px;right: 0px;}
 .table .module_products_list td.like_icons .wrapp_stockers .like_icons{top: 50%;margin-top: -15px;position:static;margin:0px;}
@@ -783,7 +783,7 @@ body .left_block .left_menu li.exit a:before { display:inline-block !important; 
 .list .display_list .list_item td.image_block {padding:0px;}
 .list .display_list .list_item td.description_wrapp {padding: 0px 20px;}
 .list .display_list .list_item { height: 266px; white-space: normal; }
-.list .display_list .list_item  td.description_wrapp{border-left: 1px solid #dadada; border-right: 1px solid #dadada;}
+.list .display_list .list_item  td.description_wrapp{border-left: 1px solid #dadada; border-right: 1px solid #dadada; max-width: 268px;}
 .list .display_list .list_item .image_block { width: 21%; position: relative; zoom: 1; min-height: 170px;  box-sizing: border-box; -moz-box-sizing: border-box; -o-box-sizing: border-box; -webkit-box-sizing: border-box; }
 
 .display_list { margin-top: 0px; padding: 0px 0px 30px; }
