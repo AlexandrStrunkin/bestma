@@ -1,6 +1,6 @@
     <script type="text/javascript">
-        //Слайдер
-        $(".photo_miniature").on("mouseover", function() {
+        //Слайдер   
+        $(".photo_miniature").on("mouseover", function() { 
             $(this).siblings(".photo_miniature").removeClass('active');       
             $(this).addClass('active'); 
             var index = $(this).index();
@@ -9,14 +9,14 @@
             if ($(this).hasClass('last') && $(this).next().is('.photo_miniature')) {
                 $(this).next().fadeIn(500).addClass("last");
                 $(this).removeClass("last");
-                $(this).parents('.item').find('.photo_miniature.first').hide().removeClass("first").next('.photo_miniature').addClass("first");
+                $(this).parents('.item').find('.photo_miniature.first').hide().removeClass("first").next('.photo_miniature').addClass("first"); 
             }            
-            if ($(this).hasClass('first') && $(this).prev().is('.photo_miniature')) {
+            if ($(this).hasClass('first') && $(this).prev().is('.photo_miniature')) {   
                 $(this).prev().fadeIn(500).addClass("first");
                 $(this).removeClass("first");
-                $(this).parents('.item').find('.photo_miniature.last').hide().removeClass("last").prev('.photo_miniature').addClass("last"); 
+                $(this).parents('.item').find('.photo_miniature.last').hide().removeClass("last").prev('.photo_miniature').addClass("last");
             }                  
-        });
+        }); 
         //Всплывающее окно
         $(".image_wrapper_block a").on("mouseover", function(){
             $('.catalog_photo_popup').hide();
