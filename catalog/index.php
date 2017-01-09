@@ -53,7 +53,7 @@ $APPLICATION->IncludeComponent(
 			5 => "CML2_LINK",
 			6 => "",
 		),
-		"USE_REVIEW" => "Y",
+		"USE_REVIEW" => "N",
 		"MESSAGES_PER_PAGE" => "10",
 		"USE_CAPTCHA" => "Y",
 		"REVIEW_AJAX_POST" => "Y",
@@ -256,7 +256,7 @@ $APPLICATION->IncludeComponent(
 		"USE_ALSO_BUY" => "Y",
 		"ALSO_BUY_ELEMENT_COUNT" => "5",
 		"ALSO_BUY_MIN_BUYES" => "2",
-		"USE_STORE" => "Y",
+		"USE_STORE" => "N",
 		"USE_STORE_PHONE" => "Y",
 		"USE_STORE_SCHEDULE" => "Y",
 		"USE_MIN_AMOUNT" => "N",
@@ -291,8 +291,7 @@ $APPLICATION->IncludeComponent(
 		"ADD_PROPERTIES_TO_BASKET" => "Y",
 		"PARTIAL_PRODUCT_PROPERTIES" => "Y",
 		"DETAIL_CHECK_SECTION_ID_VARIABLE" => "N",
-		"STORES" => array(
-		),
+		"STORES" => "",
 		"USER_FIELDS" => array(
 			0 => "",
 			1 => "",

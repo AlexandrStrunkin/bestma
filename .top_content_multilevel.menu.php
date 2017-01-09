@@ -9,7 +9,7 @@ $aMenuLinks = Array(
 	),
 	Array(
 		"О компании", 
-		"/about/", 
+		"/company/", 
 		Array(), 
 		Array(), 
 		"" 
@@ -22,22 +22,29 @@ $aMenuLinks = Array(
 		"" 
 	),
 	Array(
-		"Новости", 
-		"/news/", 
+		"Прайс", 
+		"/prices/", 
 		Array(), 
 		Array(), 
 		"" 
 	),
 	Array(
-		"Условия", 
-		"/about/terms/", 
+		"как купить", 
+		"/help/", 
 		Array(), 
 		Array(), 
 		"" 
 	),
 	Array(
 		"Контакты", 
-		"/about/contacts/", 
+		"/contacts/", 
+		Array(), 
+		Array(), 
+		"" 
+	),
+	Array(
+		"Акции", 
+		"/sale/", 
 		Array(), 
 		Array(), 
 		"" 

@@ -257,17 +257,21 @@ $htmlClass = ($_REQUEST && isset($_REQUEST['print']) ? 'print' : false);
 				<div class="wrapper_inner <?=(COptimus::IsMainPage() ? "front" : "");?> <?=((COptimus::IsOrderPage() || COptimus::IsBasketPage()) ? "wide_page" : "");?>">
 					<?if(!COptimus::IsOrderPage() && !COptimus::IsBasketPage()){?>
 						<div class="left_block">
-							<?$APPLICATION->IncludeComponent("bitrix:main.include", ".default",
-								array(
-									"COMPONENT_TEMPLATE" => ".default",
-									"PATH" => SITE_DIR."include/left_block/menu.left_menu.php",
-									"AREA_FILE_SHOW" => "file",
-									"AREA_FILE_SUFFIX" => "",
-									"AREA_FILE_RECURSIVE" => "Y",
-									"EDIT_TEMPLATE" => "standard.php"
-								),
-								false
-							);?>					
+							<?$APPLICATION->IncludeComponent(
+	"bitrix:main.include", 
+	".default", 
+	array(
+		"COMPONENT_TEMPLATE" => ".default",
+		"PATH" => SITE_DIR."include/left_block/menu.left_menu.php",
+		"AREA_FILE_SHOW" => "file",
+		"AREA_FILE_SUFFIX" => "",
+		"AREA_FILE_RECURSIVE" => "Y",
+		"EDIT_TEMPLATE" => "standard.php",
+		"COMPOSITE_FRAME_MODE" => "A",
+		"COMPOSITE_FRAME_TYPE" => "AUTO"
+	),
+	false
+);?>					
 
 							<?$APPLICATION->ShowViewContent('left_menu');?>
 
@@ -293,42 +297,51 @@ $htmlClass = ($_REQUEST && isset($_REQUEST['print']) ? 'print' : false);
 								),
 								false
 							);?>
-							<?$APPLICATION->IncludeComponent("bitrix:main.include", ".default",
-								array(
-									"COMPONENT_TEMPLATE" => ".default",
-									"PATH" => SITE_DIR."include/left_block/comp_news.php",
-									"AREA_FILE_SHOW" => "file",
-									"AREA_FILE_SUFFIX" => "",
-									"AREA_FILE_RECURSIVE" => "Y",
-									"EDIT_TEMPLATE" => "standard.php"
-								),
-								false
-							);?>
-							<?$APPLICATION->IncludeComponent("bitrix:main.include", ".default",
-								array(
-									"COMPONENT_TEMPLATE" => ".default",
-									"PATH" => SITE_DIR."include/left_block/comp_news_articles.php",
-									"AREA_FILE_SHOW" => "file",
-									"AREA_FILE_SUFFIX" => "",
-									"AREA_FILE_RECURSIVE" => "Y",
-									"EDIT_TEMPLATE" => "standard.php"
-								),
-								false
-							);?>
+							<?$APPLICATION->IncludeComponent(
+	"bitrix:main.include", 
+	"front", 
+	array(
+		"COMPONENT_TEMPLATE" => "front",
+		"PATH" => SITE_DIR."include/left_block/comp_news.php",
+		"AREA_FILE_SHOW" => "file",
+		"AREA_FILE_SUFFIX" => "",
+		"AREA_FILE_RECURSIVE" => "Y",
+		"EDIT_TEMPLATE" => "standard.php",
+		"COMPOSITE_FRAME_MODE" => "A",
+		"COMPOSITE_FRAME_TYPE" => "AUTO"
+	),
+	false
+);?>
+							<?$APPLICATION->IncludeComponent("bitrix:main.include", "template1", Array(
+	"COMPONENT_TEMPLATE" => ".default",
+		"PATH" => SITE_DIR."include/left_block/comp_news_articles.php",	// Путь к файлу области
+		"AREA_FILE_SHOW" => "file",	// Показывать включаемую область
+		"AREA_FILE_SUFFIX" => "",
+		"AREA_FILE_RECURSIVE" => "Y",
+		"EDIT_TEMPLATE" => "standard.php",	// Шаблон области по умолчанию
+	),
+	false
+);?>
 						</div>
 						<div class="right_block">
 					<?}?>
 						<section class="middle">
 							<?if(!COptimus::IsMainPage()):?>
 								<div class="container">
-									<?$APPLICATION->IncludeComponent("bitrix:breadcrumb", "optimus", array(
-										"START_FROM" => "0",
-										"PATH" => "",
-										"SITE_ID" => "-",
-										"SHOW_SUBSECTIONS" => "N"
-										),
-										false
-									);?>
+									<?$APPLICATION->IncludeComponent(
+	"bitrix:breadcrumb", 
+	"optimus", 
+	array(
+		"START_FROM" => "0",
+		"PATH" => "",
+		"SITE_ID" => "s2",
+		"SHOW_SUBSECTIONS" => "N",
+		"COMPONENT_TEMPLATE" => "optimus",
+		"COMPOSITE_FRAME_MODE" => "A",
+		"COMPOSITE_FRAME_TYPE" => "AUTO"
+	),
+	false
+);?>
 									<h1 id="pagetitle"><?=$APPLICATION->ShowTitle(false);?></h1>								
 							<?endif;?>
 <?if(isset($_SERVER["HTTP_X_REQUESTED_WITH"]) && strtolower($_SERVER['HTTP_X_REQUESTED_WITH']) == "xmlhttprequest") $APPLICATION->RestartBuffer();?>

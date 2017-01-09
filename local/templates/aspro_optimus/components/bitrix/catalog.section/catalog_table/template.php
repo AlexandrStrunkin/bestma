@@ -54,8 +54,8 @@
                 ?>                
 
                 <tr class="item" id="<?=$this->GetEditAreaId($arItem['ID']);?>">                    
-                    <td class="foto-cell">
-                        <?if( !(empty($arItem["PREVIEW_PICTURE"]) || empty($arItem["DETAIL_PICTURE"]))) {?>
+                    <td class="foto-cell">                       
+                        <?if( !empty($arItem["PREVIEW_PICTURE"]) || !empty($arItem["DETAIL_PICTURE"])) {?>
                         <div class="catalog_photo_popup"> 
                             <div class="popup_photo">
                             <?if( !empty($arItem["PREVIEW_PICTURE"]) ):?>
