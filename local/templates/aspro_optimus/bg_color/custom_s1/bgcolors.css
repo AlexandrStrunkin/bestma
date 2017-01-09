@@ -1,3 +1,4 @@
-body {
-  background: #0D6E30;
+body,
+.footer_inner.fill {
+  background: #f6f6f7;
 }

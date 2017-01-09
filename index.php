@@ -4,14 +4,18 @@ $APPLICATION->SetPageProperty("viewed_show", "Y");
 $APPLICATION->SetTitle("Сайт по умолчанию");
 ?>
 
-<?$APPLICATION->IncludeComponent("bitrix:main.include", ".default",
+<?$APPLICATION->IncludeComponent(
+	"bitrix:main.include", 
+	"front", 
 	array(
-		"COMPONENT_TEMPLATE" => ".default",
+		"COMPONENT_TEMPLATE" => "front",
 		"PATH" => SITE_DIR."include/mainpage/comp_banners_top_slider.php",
 		"AREA_FILE_SHOW" => "file",
 		"AREA_FILE_SUFFIX" => "",
 		"AREA_FILE_RECURSIVE" => "Y",
-		"EDIT_TEMPLATE" => "standard.php"
+		"EDIT_TEMPLATE" => "standard.php",
+		"COMPOSITE_FRAME_MODE" => "A",
+		"COMPOSITE_FRAME_TYPE" => "AUTO"
 	),
 	false
 );?>
@@ -28,14 +32,18 @@ $APPLICATION->SetTitle("Сайт по умолчанию");
 	false
 );?>
 
-<?$APPLICATION->IncludeComponent("bitrix:main.include", ".default",
+<?$APPLICATION->IncludeComponent(
+	"bitrix:main.include", 
+	".default", 
 	array(
 		"COMPONENT_TEMPLATE" => ".default",
 		"PATH" => SITE_DIR."include/mainpage/comp_banners_float.php",
 		"AREA_FILE_SHOW" => "file",
 		"AREA_FILE_SUFFIX" => "",
 		"AREA_FILE_RECURSIVE" => "Y",
-		"EDIT_TEMPLATE" => "standard.php"
+		"EDIT_TEMPLATE" => "standard.php",
+		"COMPOSITE_FRAME_MODE" => "A",
+		"COMPOSITE_FRAME_TYPE" => "AUTO"
 	),
 	false
 );?>

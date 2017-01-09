@@ -1,1 +1,1 @@
-<a rel="nofollow" href="mailto:info@dev-trebnikov-bestma.webgk.ru">info@dev-trebnikov-bestma.webgk.ru</a>
+<a href="mailto:info@bestma.ru">info@bestma.ru</a>
