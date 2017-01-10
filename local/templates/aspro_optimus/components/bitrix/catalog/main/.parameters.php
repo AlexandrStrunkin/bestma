@@ -64,7 +64,7 @@
 			{ $arUserFields_S[$FIELD_NAME] = $arUserField["LIST_COLUMN_LABEL"]? $arUserField["LIST_COLUMN_LABEL"]: $FIELD_NAME; }
 	}	
 
-	$arTemplateParametersParts = array();
+	$arTemplateParametersParts = array();   
 
 	$arTemplateParametersParts[] = array(
 		"IBLOCK_STOCK_ID" => Array(
@@ -496,10 +496,17 @@
 			);
 			unset($rcmTypeList);
 		}
-	}
-		
-
+	}        
+    $arTemplateParametersParts[] = array(
+        'RECOMENDED_RETAIL_PRICE' => array(
+            "PARENT" => "PRICES",
+            "NAME" => GetMessage("RECOMENDED_RETAIL_PRICE"),
+            "TYPE" => "LIST",
+            "MULTIPLE" => "N",
+            "VALUES" => $arPrice,
+        )
+    );                                   
 	//merge parameters to one array 
-	$arTemplateParameters = array();
+	$arTemplateParameters = array();  
 	foreach($arTemplateParametersParts as $i => $part) { $arTemplateParameters = array_merge($arTemplateParameters, $part); }
 ?>

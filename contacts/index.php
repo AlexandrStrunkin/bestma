@@ -3,21 +3,29 @@ require($_SERVER["DOCUMENT_ROOT"]."/bitrix/header.php");
 $APPLICATION->SetTitle("Контакты");
 ?><div class="contacts_map">
 	 <?$APPLICATION->IncludeComponent(
-	"bitrix:map.google.view",
-	"map",
-	Array(
-		"API_KEY" => "",
+	"bitrix:map.google.view", 
+	"map", 
+	array(
+		"API_KEY" => "AIzaSyC6Y4JlzzJyUAZb06uGScZFPtynAjRzSS4",
 		"COMPOSITE_FRAME_MODE" => "A",
 		"COMPOSITE_FRAME_TYPE" => "AUTO",
-		"CONTROLS" => array(),
+		"CONTROLS" => array(
+		),
 		"INIT_MAP_TYPE" => "ROADMAP",
-		"MAP_DATA" => "a:4:{s:10:\"google_lat\";d:55.839673999999995;s:10:\"google_lon\";d:37.652491;s:12:\"google_scale\";i:16;s:10:\"PLACEMARKS\";a:1:{i:0;a:3:{s:4:\"TEXT\";s:0:\"\";s:3:\"LON\";d:37.653772830963135;s:3:\"LAT\";d:55.83972625700614;}}}",
+		"MAP_DATA" => "a:4:{s:10:\"google_lat\";d:55.839674;s:10:\"google_lon\";d:37.652491;s:12:\"google_scale\";i:16;s:10:\"PLACEMARKS\";a:1:{i:0;a:3:{s:4:\"TEXT\";s:0:\"\";s:3:\"LON\";d:37.653772830963;s:3:\"LAT\";d:55.839726257006;}}}",
 		"MAP_HEIGHT" => "400",
 		"MAP_ID" => "",
 		"MAP_WIDTH" => "100%",
-		"OPTIONS" => array("ENABLE_DBLCLICK_ZOOM","ENABLE_DRAGGING"),
-		"ZOOM_BLOCK" => array("POSITION"=>"right center",)
-	)
+		"OPTIONS" => array(
+			0 => "ENABLE_DBLCLICK_ZOOM",
+			1 => "ENABLE_DRAGGING",
+		),
+		"ZOOM_BLOCK" => array(
+			"POSITION" => "right center",
+		),
+		"COMPONENT_TEMPLATE" => "map"
+	),
+	false
 );?>
 </div>
 <div class="wrapper_inner">

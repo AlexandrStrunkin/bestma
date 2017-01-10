@@ -15,17 +15,17 @@ $aMenuLinks = Array(
 		"" 
 	),
 	Array(
-		"Каталог", 
-		"/catalog/", 
-		Array(), 
-		Array("NOT_VISIBLE"=>"Y", "CLASS"=>"catalog"), 
-		"" 
-	),
-	Array(
 		"Прайс", 
 		"/prices/", 
 		Array(), 
 		Array(), 
+		"" 
+	),
+	Array(
+		"Каталог", 
+		"/catalog/", 
+		Array(), 
+		Array("NOT_VISIBLE"=>"Y", "CLASS"=>"catalog"), 
 		"" 
 	),
 	Array(

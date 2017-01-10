@@ -1,7 +1,7 @@
 <?
 use Bitrix\Main\Type\Collection;
 use Bitrix\Currency\CurrencyTable;
-
+                                        
 if (!defined('B_PROLOG_INCLUDED') || B_PROLOG_INCLUDED!==true) die();
 /** @var CBitrixComponentTemplate $this */
 /** @var array $arParams */
@@ -14,7 +14,7 @@ $arDefaultParams = array(
 	'ADD_TO_BASKET_ACTION' => 'ADD',
 	'DEFAULT_COUNT' => '1',
 );
-$arParams = array_merge($arDefaultParams, $arParams);
+$arParams = array_merge($arDefaultParams, $arParams);  
 
 if ('TYPE_1' != $arParams['TYPE_SKU'] )
 	$arParams['TYPE_SKU'] = 'N';

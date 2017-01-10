@@ -9,10 +9,6 @@
 					<?
 					$this->AddEditAction($arItem['ID'], $arItem['EDIT_LINK'], CIBlock::GetArrayByID($arItem["IBLOCK_ID"], "ELEMENT_EDIT"));
 					$this->AddDeleteAction($arItem['ID'], $arItem['DELETE_LINK'], CIBlock::GetArrayByID($arItem["IBLOCK_ID"], "ELEMENT_DELETE"), array("CONFIRM" => GetMessage('CT_BNL_ELEMENT_DELETE_CONFIRM')));
-                    if(is_array($arItem["DETAIL_PICTURE"])) {
-                        $img = CFile::ResizeImageGet($arItem["DETAIL_PICTURE"], array( "width" => 916, "height" => 322 ), BX_RESIZE_IMAGE_PROPORTIONAL, true);
-                        $arItem["DETAIL_PICTURE"]['SRC'] = $img['src'];    
-                    }
 					$background = is_array($arItem["DETAIL_PICTURE"]) ? $arItem["DETAIL_PICTURE"]["SRC"] : $this->GetFolder()."/images/background.jpg";
 					$target = $arItem["PROPERTIES"]["TARGETS"]["VALUE_XML_ID"];
 					?>

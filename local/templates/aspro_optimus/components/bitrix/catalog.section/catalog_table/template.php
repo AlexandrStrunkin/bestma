@@ -183,7 +183,7 @@
                                 foreach( $arItem["PRICES"] as $key => $arPrice ) { if($arPrice["CAN_ACCESS"]){$arCountPricesCanAccess++;} }
                                 ?>
                                 <?foreach($arItem["PRICES"] as $key => $arPrice){?>
-                                    <?if($arPrice["CAN_ACCESS"]){
+                                    <?if($arPrice["CAN_ACCESS"] && ($key != $arParams["RECOMENDED_RETAIL_PRICE"])){
                                         $percent=0;
                                         if($arPrice["MIN_PRICE"]=="Y"){
                                             $min_price_id=$arPrice["PRICE_ID"];
@@ -276,43 +276,44 @@
                     <?/*$totalCount*/?>
                     <? if ($totalCount <= 5) { ?> 
                         <div class="item-stock quantity_1">
-                            <span class="icon stock"></span>
-                            <div class="value_block">
-                                <div class="value_block_triangle"></div>
-                                <div class="value"><?= GetMessage("QUANTITY_1")?></div>
-                                <br>
-                                <div class="add_value"><?= GetMessage("QUANTITY_1_ADD")?></div>
-                            </div>
+                            <span class="icon stock"></span>                            
+                        </div>
+                        <div class="value_block quantity_1">
+                            <div class="value_block_triangle"></div>
+                            <div class="value"><?= GetMessage("QUANTITY_1")?></div>
+                            <br>
+                            <div class="add_value"><?= GetMessage("QUANTITY_1_ADD")?></div>
                         </div>          
                     <? } elseif (($totalCount > 5) && ($totalCount <= 10)) { ?>
                         <div class="item-stock quantity_2">
                             <span class="icon stock"></span>
-                            <div class="value_block">
-                                <div class="value_block_triangle"></div>
-                                <div class="value"><?= GetMessage("QUANTITY_2")?></div>
-                                <br>
-                                <div class="add_value"><?= GetMessage("QUANTITY_2_ADD")?></div>
-                            </div>
-                        </div>        
+                            
+                        </div> 
+                        <div class="value_block quantity_2">
+                            <div class="value_block_triangle"></div>
+                            <div class="value"><?= GetMessage("QUANTITY_2")?></div>
+                            <br>
+                            <div class="add_value"><?= GetMessage("QUANTITY_2_ADD")?></div>
+                        </div>       
                     <? } elseif (($totalCount > 10) && ($totalCount <= 50)) { ?>
                         <div class="item-stock quantity_3">
-                            <span class="icon stock"></span>
-                            <div class="value_block">
-                                <div class="value_block_triangle"></div>
-                                <div class="value"><?= GetMessage("QUANTITY_3")?></div>
-                                <br>
-                                <div class="add_value"><?= GetMessage("QUANTITY_3_ADD")?></div>
-                            </div>
+                            <span class="icon stock"></span>  
+                        </div>
+                        <div class="value_block quantity_3">
+                            <div class="value_block_triangle"></div>
+                            <div class="value"><?= GetMessage("QUANTITY_3")?></div>
+                            <br>
+                            <div class="add_value"><?= GetMessage("QUANTITY_3_ADD")?></div>
                         </div>        
                     <? } elseif ($totalCount > 50) { ?>
                         <div class="item-stock quantity_4">
                             <span class="icon stock"></span>
-                            <div class="value_block">
-                                <div class="value_block_triangle"></div>
-                                <div class="value"><?= GetMessage("QUANTITY_4")?></div>
-                                <br>
-                                <div class="add_value"><?= GetMessage("QUANTITY_4_ADD")?></div>
-                            </div>
+                        </div>
+                        <div class="value_block quantity_4">
+                            <div class="value_block_triangle"></div>
+                            <div class="value"><?= GetMessage("QUANTITY_4")?></div>
+                            <br>
+                            <div class="add_value"><?= GetMessage("QUANTITY_4_ADD")?></div>
                         </div>                   
                     <? } ?> 
                         <?/*=$arQuantityData["HTML"];*/?>

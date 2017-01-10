@@ -9,7 +9,7 @@
 					<a class="icons_fa <?=($arItem["CHILD"] ? "parent" : "");?>" href="<?=$arItem["SECTION_PAGE_URL"]?>" ><?=$arItem["NAME"]?></a>
 					<?if($arItem["CHILD"]){?>
 						<ul class="dropdown">
-							<?foreach($arItem["CHILD"] as $arChildItem){?>
+							<?foreach($arItem["CHILD"] as $arChildItem){?> 
 								<li class="<?=($arChildItem["CHILD"] ? "has-childs" : "");?> <?if($arChildItem["SELECTED"]){?> current <?}?>">
 									<?if($arChildItem["IMAGES"]){?>
 										<span class="image"><a href="<?=$arChildItem["SECTION_PAGE_URL"];?>"><img src="<?=$arChildItem["IMAGES"]["src"];?>" /></a></span>
@@ -17,7 +17,7 @@
 									<a class="section" href="<?=$arChildItem["SECTION_PAGE_URL"];?>"><span><?=$arChildItem["NAME"];?></span></a>
 									<?if($arChildItem["CHILD"]){?>
 										<ul class="dropdown">
-											<?foreach($arChildItem["CHILD"] as $arChildItem1){?>
+											<?foreach($arChildItem["CHILD"] as $arChildItem1){?> 
 												<li class="menu_item <?if($arChildItem1["SELECTED"]){?> current <?}?>">
 													<a class="parent1 section1" href="<?=$arChildItem1["SECTION_PAGE_URL"];?>"><span><?=$arChildItem1["NAME"];?></span></a>
 												</li>

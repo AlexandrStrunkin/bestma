@@ -33,7 +33,7 @@ $this->setFrameMode(true);
 							if($arParams["SECTION_ID"]){
 								$GLOBALS[$arParams["FILTER_NAME"]]["SECTION_ID"]=$arParams["SECTION_ID"];
 								$GLOBALS[$arParams["FILTER_NAME"]]["INCLUDE_SUBSECTIONS"] = "Y"; 
-							}?>
+							}?>       
 							<?$APPLICATION->IncludeComponent(
 								"bitrix:catalog.section",
 								"catalog_block_front",

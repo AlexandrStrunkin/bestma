@@ -28,8 +28,9 @@
 	$MESS["VIEWED_TITLE"] = "Ранее вы смотрели";
 	$MESS["CP_BC_TPL_DETAIL_ADD_DETAIL_TO_SLIDER"] = "Добавлять детальную картинку в слайдер";
 	$MESS["SKU_DETAIL_ID"] = "Параметр определяющий SKU на детальной";
-	$MESS["SKU_DETAIL_ID_TIP"] = "Название параметра для определения торгового предложения на детальной странице товара";
-	
+	$MESS["SKU_DETAIL_ID_TIP"] = "Название параметра для определения торгового предложения на детальной странице товара";     
+    
+    $MESS["RECOMENDED_RETAIL_PRICE"] = "Рекмендованная розничная цена";      
 	
 	$MESS["DEFAULT_LIST_TEMPLATE"] = "Показывать товары в разделе по умолчанию";
 	$MESS["DEFAULT_LIST_TEMPLATE_TABLE"] = "таблицей";

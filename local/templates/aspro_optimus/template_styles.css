@@ -715,6 +715,7 @@ body table.title-search-result td.title-search-all a:hover span.text{border-bott
 #header .basket_fly .opener{position:absolute;width:60px;left:-60px;border-radius:4px 0 0 4px; -moz-border-radius:4px 0 0 4px; -webkit-border-radius:4px 0 0 4px; top:0px;background:#424f60;overflow: hidden;}
 #header .basket_fly .opener >div{display:inline-block;text-align:center;width:60px;height:60px;cursor:pointer;vertical-align:top;*display:inline-block;zoom:1;}
 #header .basket_fly .opener >div .count.empty_items{display:none;}
+#header .basket_fly .compare_count.small{display:none;}
 
 #header .basket_fly .opener .wish_count.empty .icon{background:transparent;}
 #header .basket_fly tr.hidden{display:none;}
@@ -753,7 +754,7 @@ body table.title-search-result td.title-search-all a:hover span.text{border-bott
 .basket_wrapp .module-cart thead tr{background:#f7f7f7;}
 .basket_wrapp .module-cart .goods{max-height:260px;overflow-y:auto;/*overflow-x:hidden;*/ border-bottom:1px solid #e7e7e7;}
 .basket_wrapp .module-cart .cost.prices .price{margin-left:0px;}
-#header .basket_fly{border-radius:0 0 0 2px;-moz-border-radius:0 0 0 2px;-webkit-border-radius:0 0 0 2px;top:40px;z-index:100;position:fixed;width:800px;right:-800px;}
+#header .basket_fly{border-radius:0 0 0 2px;-moz-border-radius:0 0 0 2px;-webkit-border-radius:0 0 0 2px;top:210px;z-index:100;position:fixed;width:800px;right:-800px;}
 .basket_wrapp .basket_sort ul.tabs{position:relative;zoom:1;}
 .basket_wrapp .basket_sort{padding:0px;}
 .middle .basket_wrapp{margin:-13px 0px 0px;}
@@ -1693,20 +1694,20 @@ div.item-title{overflow:hidden;text-overflow:ellipsis;text-overflow:-o-ellipsis-
 div.item-title a, div.item-title a span{font-size:13px;line-height:20px;display:block;font-weight:500;}
 div.item-title a span {padding:0px 0px 0px;}
 
-.table .item-stock > .value_block {
+.table .quantity-cell > .value_block {
     font-size: 14px;
     position: absolute;
     background: #fff;
     z-index: 5;
-    top: -15px;
-    right: -215px;
+    top: 0px;
+    right: 0px;
     height: 34px;
     width: 144px;
     padding: 24px;
     display: none;
 }
 
-.table .item-stock .value_block_triangle {
+.table .quantity-cell .value_block_triangle {
     position: absolute;
     width: 5px;
     height: 9px;
@@ -1716,22 +1717,22 @@ div.item-title a span {padding:0px 0px 0px;}
     background: url(images/quantity_table_triangle.png) no-repeat center center;
 }
 
-.table .item-stock .value {
+.table .quantity-cell .value {
     font-family: 'ClearSans-Bold';
     font-size: 15px;
 } 
 
-.table .item-stock .add_value {
+.table .quantity-cell .add_value {
     font-family: 'ClearSans-Regular';
     font-size: 12px;
     color: #5b5b5b;
     margin: -12px 0px;
 } 
 
-.table .item-stock.quantity_1 .value {color: #fb6262;}
-.table .item-stock.quantity_2 .value {color: #fb6262;} 
-.table .item-stock.quantity_3 .value {color: #f7a729;}
-.table .item-stock.quantity_4 .value {color: #00a2a1;} 
+.table .quantity-cell .quantity_1 .value {color: #fb6262;}
+.table .quantity-cell .quantity_2 .value {color: #fb6262;} 
+.table .quantity-cell .quantity_3 .value {color: #f7a729;}
+.table .quantity-cell .quantity_4 .value {color: #00a2a1;} 
   
 .table .item-stock .icon{width:18px;height:13px;background:url('images/quantity_logo_table.png') no-repeat;margin:0px; cursor: pointer; position:relative; margin: 18px 16px;}
 /*.table .item-stock .icon.order{width:23px;height:23px;background:url('images/out_of_stock.png') no-repeat;margin:0px;}*/
@@ -1740,7 +1741,7 @@ div.item-title a span {padding:0px 0px 0px;}
 .table .item-stock.quantity_2 .icon{background-position:0px -32px;}
 .table .item-stock.quantity_3 .icon{background-position:0px -16px;}
 .table .item-stock.quantity_4 .icon{background-position:0px 0px;}
-.table .item-stock{font-size:12px;line-height:15px;margin:0px;white-space: nowrap;text-align: left;}
+.table .quantity-cell {font-size:12px;line-height:15px;margin:0px;white-space: nowrap;text-align: left;}
 
 .block .item-stock > span{font-family:'ClearSans-Regular'; color:#00a2a1; font-size:11px; letter-spacing:0px; line-height:22px;} 
 .block .item-stock .icon{width:23px;height:23px;background:url('images/quantity_logo2.png') no-repeat;margin:0px 12px 0px 0px;}

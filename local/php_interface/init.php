@@ -11,7 +11,7 @@ function MyGetOptimalPrice($productID, $quantity = 1, $arUserGroups = array(), $
     global $LocalPrice;
     if($LocalPrice <= 0)
     {
-        // Выведем актуальную корзину для текущего пользователя
+        // Р’С‹РІРµРґРµРј Р°РєС‚СѓР°Р»СЊРЅСѓСЋ РєРѕСЂР·РёРЅСѓ РґР»СЏ С‚РµРєСѓС‰РµРіРѕ РїРѕР»СЊР·РѕРІР°С‚РµР»СЏ
         $dbBasketItems = CSaleBasket::GetList(false,
             array(
                 "FUSER_ID" => CSaleBasket::GetBasketUserID(),
@@ -31,11 +31,11 @@ function MyGetOptimalPrice($productID, $quantity = 1, $arUserGroups = array(), $
         }
     }
 
-    //ОПТ 1 при сумме заказа до 5 000 рублей
-    //ОПТ 2 при сумме заказа до 50 000 рублей
-    //ОПТ 3 при сумме заказа более 50 000 рублей
+    //РћРџРў 1 РїСЂРё СЃСѓРјРјРµ Р·Р°РєР°Р·Р° РґРѕ 5 000 СЂСѓР±Р»РµР№
+    //РћРџРў 2 РїСЂРё СЃСѓРјРјРµ Р·Р°РєР°Р·Р° РґРѕ 50 000 СЂСѓР±Р»РµР№
+    //РћРџРў 3 РїСЂРё СЃСѓРјРјРµ Р·Р°РєР°Р·Р° Р±РѕР»РµРµ 50 000 СЂСѓР±Р»РµР№
 
-    // получаем все типы цен, возможные для данного товара
+    // РїРѕР»СѓС‡Р°РµРј РІСЃРµ С‚РёРїС‹ С†РµРЅ, РІРѕР·РјРѕР¶РЅС‹Рµ РґР»СЏ РґР°РЅРЅРѕРіРѕ С‚РѕРІР°СЂР°
     $arOptPrices = CCatalogProduct::GetByIDEx($productID);
 
     if($LocalPrice < 30000){
@@ -68,14 +68,14 @@ function MyGetOptimalPrice($productID, $quantity = 1, $arUserGroups = array(), $
 }
 
 
-// Функция для отладки //
+// Р¤СѓРЅРєС†РёСЏ РґР»СЏ РѕС‚Р»Р°РґРєРё //
 function print_rr($val) {
     echo '<pre>';
     print_r($val);
     echo '</pre>';
 }
 
-// Получение текущего фона //
+// РџРѕР»СѓС‡РµРЅРёРµ С‚РµРєСѓС‰РµРіРѕ С„РѕРЅР° //
 function func_current_background($iblock_id) {
 
     if(!CModule::IncludeModule("iblock") || empty($iblock_id)) {
@@ -107,7 +107,7 @@ AddEventHandler("iblock", "OnAfterIBlockElementUpdate", Array("SVC", "OnAfterIBl
 
 class SVC
 {
-    // для Новых продуктов
+    // РґР»СЏ РќРѕРІС‹С… РїСЂРѕРґСѓРєС‚РѕРІ
     function OnAfterIBlockElementAddHandler(&$arFields)
     {
         if($arFields["ID"]>0&&$arFields["IBLOCK_ID"]=="3") {
@@ -143,7 +143,7 @@ class SVC
 
 AddEventHandler("catalog", "OnBeforeProductUpdate", "QuantityAddHeandler");
 
-// ������� ���������� ������� "OnBeforeProductUpdate"
+// создаем обработчик события "OnBeforeProductUpdate"
 function QuantityAddHeandler($ID, &$arFields) {
 
     $element_quantity = CCatalogProduct::GetList(
@@ -159,18 +159,23 @@ function QuantityAddHeandler($ID, &$arFields) {
         if(($element_quantity["QUANTITY"] <= 0 && $arFields["QUANTITY"] > $element_quantity["QUANTITY"]) ||
             ($element_quantity["QUANTITY"] > 0 && $element_quantity["QUANTITY"] == $arFields["QUANTITY"] && $props_quantity["VALUE"] == "Y")){
 
-                $quantity_new = "Y";  // �������� "������ �����������" ����������� �������� "Y"
+                $quantity_new = "Y";  // свойству "свежие поступления" присваиваем значение "Y"
 
         } else if(($element_quantity["QUANTITY"] > 0 && $arFields["QUANTITY"] <= 0) ||
                 ($element_quantity["QUANTITY"] > 0 && $arFields["QUANTITY"] > 0)) {
 
-                $quantity_new = "";  // �������� "������ �����������" ����������� �������� "N"
+                $quantity_new = "";  // свойству "свежие поступления" присваиваем значение "N"
 
         } else if(($element_quantity["QUANTITY"] <= 0 && $arFields["QUANTITY"] <= 0) ||
                 ($element_quantity["QUANTITY"] > 0 && $element_quantity["QUANTITY"] < $arFields["QUANTITY"])) {
                 $quantity_new = '';
         }
-        CIBlockElement::SetPropertyValuesEx($ID, false, array("SVEZHIE_POSTUPLENIYA" => $quantity_new));  // ��������� �������
+        CIBlockElement::SetPropertyValuesEx($ID, false, array("SVEZHIE_POSTUPLENIYA" => $quantity_new));  // обновляем элемент
+        $PROPERTY_VALUE = array(
+          0 => array("VALUE"=>"значение","DESCRIPTION"=>"описание значения"),
+          1 => array("VALUE"=>"значение2","DESCRIPTION"=>"описание значения2") 
+        );
+        CIBlockElement::SetPropertyValuesEx($ELEMENT_ID, $IBLOCK_ID, array($PROPERTY_CODE => $PROPERTY_VALUE));
     }
 
 }

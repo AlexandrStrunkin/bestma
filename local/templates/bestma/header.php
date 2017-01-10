@@ -19,7 +19,7 @@
     <link href="<?= CUtil::GetAdditionalFileURL(SITE_TEMPLATE_PATH . "/css/gradient.css"); ?>" rel="stylesheet" type="text/css" />
     <link href="<?= CUtil::GetAdditionalFileURL(SITE_TEMPLATE_PATH . "/css/normal.css"); ?>" rel="stylesheet" type="text/css" />
     <link href="<?= CUtil::GetAdditionalFileURL(SITE_TEMPLATE_PATH . "/fonts/myriad_pro/myriadpro-regular.css"); ?>" rel="stylesheet" type="text/css" />
-    <link href="<?= CUtil::GetAdditionalFileURL(SITE_TEMPLATE_PATH . "/fonts/myriad_pro/myriadpro-bold.css"); ?>" rel="stylesheet" type="text/css" />
+    <link href="<?= CUtil::GetAdditionalFileURL(SITE_TEMPLATE_PATH . "/fonts/myriad_pro/myriadpro-bold.css"); ?>" rel="stylesheet" type="text/css" />  
     <?php
         $APPLICATION->AddHeadScript(SITE_TEMPLATE_PATH . "/js/jquery-1.10.2.min.js");
         $APPLICATION->AddHeadScript(SITE_TEMPLATE_PATH . "/js/SlidesJS/jquery.slides.min.js");

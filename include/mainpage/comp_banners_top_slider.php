@@ -4,9 +4,9 @@
 	"aspro:com.banners.optimus",
 	"top_slider_banners",
 	array(
-		"IBLOCK_TYPE" => "aspro_optimus_adv",
-		"IBLOCK_ID" => "4",
-		"TYPE_BANNERS_IBLOCK_ID" => "72",
+		"IBLOCK_TYPE" => "aspro_optimus_banners",
+		"IBLOCK_ID" => "73",
+		"TYPE_BANNERS_IBLOCK_ID" => "73",
 		"SET_BANNER_TYPE_FROM_THEME" => "N",
 		"NEWS_COUNT" => "10",
 		"SORT_BY1" => "SORT",

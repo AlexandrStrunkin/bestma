@@ -31,7 +31,7 @@
             default:
                 $col=4;
                 break;
-        }?>
+        }?>                                                                                  
         <?foreach($arResult["ITEMS"] as $arItem){?>
             <div class="item_block col-<?=$col;?>">
                 <div class="catalog_item_wrapp item">
@@ -277,7 +277,7 @@
                                                     <div class="clearfix"></div>
                                                 </div>
                                             <?}*/?>
-                                        <?}else{?>
+                                        <?} else {?>
                                             <div class="price only_price" id="<?=$arItemIDs["ALL_ITEM_IDS"]['PRICE']?>">
                                                 <?if(strlen($minPrice["PRINT_DISCOUNT_VALUE"])):?>
                                                     <?=$prefix;?> <?=$minPrice['PRINT_DISCOUNT_VALUE'];?>
@@ -287,15 +287,14 @@
                                                 <?endif;?>
                                             </div>
                                         <?}?>
-                                    <?}elseif ( $arItem["PRICES"] ){?>
-                                        
-                                        <?
-                                        //temp retail price
-                                        ?>
+                                    <?} elseif ( $arItem["PRICES"] ){?>
                                         <div class="price_block">
-                                        <div class="price_name rrp"><div class="name_rrp"><?= GetMessage('RRC')?></div><div class="text_rrp"><?= GetMessage('RRC_TEXT')?></div></div>                                            
-                                        <div class="price only_price rrp">
-                                            222.00 руб.</div>
+                                            <div class="price_name rrp">
+                                                <div class="name_rrp"><?= GetMessage('RRC')?></div>
+                                                <div class="text_rrp"><?= GetMessage('RRC_TEXT')?></div></div>                                            
+                                            <div class="price only_price rrp">
+                                                <?= $arItem["PRICES"][$arParams["RECOMENDED_RETAIL_PRICE"]]['PRINT_VALUE']?>
+                                            </div>
                                         </div>
                                         
                                         <?                      
@@ -303,50 +302,52 @@
                                         $min_price_id=0;
                                         foreach( $arItem["PRICES"] as $key => $arPrice ) { if($arPrice["CAN_ACCESS"]){$arCountPricesCanAccess++;} } ?>
                                         <?foreach($arItem["PRICES"] as $key => $arPrice){?>
-                                        <div class="price_block">
-                                            <?if($arPrice["CAN_ACCESS"]){
-                                                $percent=0;
-                                                if($arPrice["MIN_PRICE"]=="Y"){
-                                                    $min_price_id=$arPrice["PRICE_ID"];
-                                                }?>
-                                                <?$price = CPrice::GetByID($arPrice["ID"]);?>
-                                                <?if($arCountPricesCanAccess > 1):?>
-                                                    <div class="price_name"><?=$price["CATALOG_GROUP_NAME"];?></div>
-                                                <?endif;?>
-                                                <?if($arPrice["VALUE"] > $arPrice["DISCOUNT_VALUE"] && $arParams["SHOW_OLD_PRICE"]=="Y"){?>
-                                                    <div class="price">
-                                                        <?if(strlen($arPrice["PRINT_VALUE"])):?>
-                                                            <?=$arPrice["PRINT_DISCOUNT_VALUE"];?>
-                                                            <?if (($arParams["SHOW_MEASURE"]=="Y") && $strMeasure){?>
-                                                                /<?=$strMeasure?>
-                                                            <?}?>
-                                                        <?endif;?>
-                                                    </div>
-                                                    <div class="price discount">
-                                                        <strike><?=$arPrice["PRINT_VALUE"];?></strike>
-                                                    </div>
-                                                    <?/*if($arParams["SHOW_DISCOUNT_PERCENT"]=="Y"){?>
-                                                        <div class="sale_block">
-                                                            <?$percent=round(($arPrice["DISCOUNT_DIFF"]/$arPrice["VALUE"])*100, 2);?>
-                                                            <?if($percent && $percent<100){?>
-                                                                <div class="value">-<?=$percent;?>%</div>
-                                                            <?}?>
-                                                            <div class="text"><?=GetMessage("CATALOG_ECONOMY");?> <span><?=$arPrice["PRINT_DISCOUNT_DIFF"];?></span></div>
-                                                            <div class="clearfix"></div>
+                                        <?if ($key != $arParams["RECOMENDED_RETAIL_PRICE"]) {?>
+                                            <div class="price_block">
+                                                <?if($arPrice["CAN_ACCESS"]){
+                                                    $percent=0;
+                                                    if($arPrice["MIN_PRICE"]=="Y"){
+                                                        $min_price_id=$arPrice["PRICE_ID"];
+                                                    }?>
+                                                    <?$price = CPrice::GetByID($arPrice["ID"]);?>
+                                                    <?if($arCountPricesCanAccess > 1):?>
+                                                        <div class="price_name"><?=$price["CATALOG_GROUP_NAME"];?></div>
+                                                    <?endif;?>
+                                                    <?if($arPrice["VALUE"] > $arPrice["DISCOUNT_VALUE"] && $arParams["SHOW_OLD_PRICE"]=="Y"){?>
+                                                        <div class="price">
+                                                            <?if(strlen($arPrice["PRINT_VALUE"])):?>
+                                                                <?=$arPrice["PRINT_DISCOUNT_VALUE"];?>
+                                                                <?if (($arParams["SHOW_MEASURE"]=="Y") && $strMeasure){?>
+                                                                    /<?=$strMeasure?>
+                                                                <?}?>
+                                                            <?endif;?>
                                                         </div>
-                                                    <?}*/?>
-                                                <?}else{?>
-                                                    <div class="price only_price">
-                                                        <?if(strlen($arPrice["PRINT_VALUE"])):?>
-                                                            <?=$arPrice["PRINT_VALUE"];?>
-                                                            <?if (($arParams["SHOW_MEASURE"]=="Y") && $strMeasure){?>
-                                                                /<?=$strMeasure?>
-                                                            <?}?>
-                                                        <?endif;?>
-                                                    </div>
+                                                        <div class="price discount">
+                                                            <strike><?=$arPrice["PRINT_VALUE"];?></strike>
+                                                        </div>
+                                                        <?/*if($arParams["SHOW_DISCOUNT_PERCENT"]=="Y"){?>
+                                                            <div class="sale_block">
+                                                                <?$percent=round(($arPrice["DISCOUNT_DIFF"]/$arPrice["VALUE"])*100, 2);?>
+                                                                <?if($percent && $percent<100){?>
+                                                                    <div class="value">-<?=$percent;?>%</div>
+                                                                <?}?>
+                                                                <div class="text"><?=GetMessage("CATALOG_ECONOMY");?> <span><?=$arPrice["PRINT_DISCOUNT_DIFF"];?></span></div>
+                                                                <div class="clearfix"></div>
+                                                            </div>
+                                                        <?}*/?>
+                                                    <?} else {?>                  
+                                                        <div class="price only_price">
+                                                            <?if(strlen($arPrice["PRINT_VALUE"])):?>
+                                                                <?=$arPrice["PRINT_VALUE"];?>
+                                                                <?if (($arParams["SHOW_MEASURE"]=="Y") && $strMeasure){?>
+                                                                    /<?=$strMeasure?>
+                                                                <?}?>
+                                                            <?endif;?>
+                                                        </div>
+                                                    <?}?>
                                                 <?}?>
-                                            <?}?>
-                                            </div>
+                                                </div>
+                                            <?}?>                          
                                         <?}?>
                                     <?}?>
                                 </div>
