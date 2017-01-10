@@ -228,6 +228,8 @@ $OptimusSectionID = $arSection["ID"];?>
 					"PRODUCT_PROPERTIES" => $arParams["PRODUCT_PROPERTIES"],
 					"SALE_STIKER" => $arParams["SALE_STIKER"],
 					"SHOW_RATING" => $arParams["SHOW_RATING"],
+                    
+                    "RECOMENDED_RETAIL_PRICE" => $arParams["RECOMENDED_RETAIL_PRICE"],
 				), $component, array("HIDE_ICONS" => $isAjax)
 			);?>
 		<?if($isAjax=="N"){?>

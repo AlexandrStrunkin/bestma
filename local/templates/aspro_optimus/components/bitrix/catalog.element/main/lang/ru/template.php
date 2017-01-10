@@ -87,4 +87,5 @@ $MESS["SUBSCRIBE_DESCRIPTION"] = "Подписка";
 $MESS["ORDER_DESCRIPTION"] = "Заказ";
 $MESS["BUY_BTN"] = "Купить";
 $MESS["MORE_TEXT_BOTTOM"] = "Подробнее";
+$MESS["RECOMENDED_RETAIL_PRICE"] = "Рекомендуемая розничная цена";
 ?>

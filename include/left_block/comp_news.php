@@ -1,8 +1,8 @@
 <?if(!defined('B_PROLOG_INCLUDED') || B_PROLOG_INCLUDED !== true) die();?>
 <?$APPLICATION->IncludeComponent(
-	"bitrix:news.list",
-	"front_news",
-	Array(
+	"bitrix:news.list", 
+	"front_news", 
+	array(
 		"ACTIVE_DATE_FORMAT" => "j F Y",
 		"ADD_SECTIONS_CHAIN" => "N",
 		"AJAX_MODE" => "N",
@@ -21,10 +21,13 @@
 		"DETAIL_URL" => "",
 		"DISPLAY_BOTTOM_PAGER" => "N",
 		"DISPLAY_TOP_PAGER" => "N",
-		"FIELD_CODE" => array("",""),
+		"FIELD_CODE" => array(
+			0 => "",
+			1 => "",
+		),
 		"FILTER_NAME" => "",
 		"HIDE_LINK_WHEN_NO_DETAIL" => "N",
-		"IBLOCK_ID" => "2",
+		"IBLOCK_ID" => "82",
 		"IBLOCK_TYPE" => "aspro_optimus_content",
 		"INCLUDE_IBLOCK_INTO_CHAIN" => "N",
 		"INCLUDE_SUBSECTIONS" => "Y",
@@ -40,7 +43,10 @@
 		"PARENT_SECTION" => "",
 		"PARENT_SECTION_CODE" => "",
 		"PREVIEW_TRUNCATE_LEN" => "140",
-		"PROPERTY_CODE" => array("",""),
+		"PROPERTY_CODE" => array(
+			0 => "",
+			1 => "",
+		),
 		"SET_BROWSER_TITLE" => "N",
 		"SET_LAST_MODIFIED" => "N",
 		"SET_META_DESCRIPTION" => "N",
@@ -55,6 +61,8 @@
 		"SORT_ORDER1" => "DESC",
 		"SORT_ORDER2" => "ASC",
 		"TITLE_BLOCK" => "Новости",
-		"TITLE_BLOCK_ALL" => "Все новости"
-	)
+		"TITLE_BLOCK_ALL" => "Все новости",
+		"COMPONENT_TEMPLATE" => "front_news"
+	),
+	false
 );?>

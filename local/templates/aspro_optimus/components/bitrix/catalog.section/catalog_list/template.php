@@ -265,10 +265,10 @@
                                 <?endif;?>
                             </div>
                         <?endif;?>
-                        <?//temp retail price?>
+                        <?//temp retail price?>                        
                         <div class="retail_price">
                             <div class="retail_price_text"><?= GetMessage('RRC_TEXT')?></div>
-                            <div class="retail_price_value">4 768,79 $</div>
+                            <div class="retail_price_value"><?= $arItem["PRICES"][$arParams["RECOMENDED_RETAIL_PRICE"]]['PRINT_VALUE']?></div>
                         </div>
                     </td>
                     <td class="information_wrapp">
@@ -342,7 +342,7 @@
                                         </div>
                                     </div> 
                                     <?foreach($arItem["PRICES"] as $key => $arPrice){?>
-                                        <?if($arPrice["CAN_ACCESS"]){
+                                        <?if($arPrice["CAN_ACCESS"] && ($key != $arParams["RECOMENDED_RETAIL_PRICE"])){
                                             $percent=0;
                                             if($arPrice["MIN_PRICE"]=="Y"){
                                                 $min_price_id=$arPrice["PRICE_ID"];
@@ -374,9 +374,9 @@
                                                         <div class="clearfix"></div>
                                                     </div>
                                                 <?}*/?>
-                                            <?}else{?>
+                                            <?} else {?>
                                                 <div class="price_saving">
-                                                    - 30%
+                                                    <?echo round(100 - ($arPrice["VALUE"]/$arItem["PRICES"][$arParams["RECOMENDED_RETAIL_PRICE"]]['VALUE'])*100).'%';?>
                                                 </div>                                        
                                                 <div class="price" id="<? echo $arItemIDs["ALL_ITEM_IDS"]['PRICE']; ?>">
                                                     <?if(strlen($arPrice["PRINT_VALUE"])):?>
