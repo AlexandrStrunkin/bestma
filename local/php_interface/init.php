@@ -153,9 +153,14 @@ function QuantityAddHeandler($ID, &$arFields) {
             false
         )->Fetch();
     $db_props = CIBlockElement::GetProperty($element_quantity["ELEMENT_IBLOCK_ID"], $ID, array("sort" => "asc"), Array("CODE"=>"SVEZHIE_POSTUPLENIYA"));
-    $props_quantity = $db_props->Fetch();
-
-    if($arFields["QUANTITY"] != ''){
+    $props_quantity = $db_props->Fetch(); 
+    
+    /*$db_testHit = CIBlockElement::GetProperty($element_quantity["ELEMENT_IBLOCK_ID"], $ID, array("sort" => "asc"), Array("HIT"=>"HIT"));
+    $testHit = $db_testHit->Fetch();
+    arshow($testHit);
+    die(1);*/
+     
+    if ($arFields["QUANTITY"] != '') {
         if(($element_quantity["QUANTITY"] <= 0 && $arFields["QUANTITY"] > $element_quantity["QUANTITY"]) ||
             ($element_quantity["QUANTITY"] > 0 && $element_quantity["QUANTITY"] == $arFields["QUANTITY"] && $props_quantity["VALUE"] == "Y")){
 
@@ -170,14 +175,8 @@ function QuantityAddHeandler($ID, &$arFields) {
                 ($element_quantity["QUANTITY"] > 0 && $element_quantity["QUANTITY"] < $arFields["QUANTITY"])) {
                 $quantity_new = '';
         }
-        CIBlockElement::SetPropertyValuesEx($ID, false, array("SVEZHIE_POSTUPLENIYA" => $quantity_new));  // обновляем элемент
-        $PROPERTY_VALUE = array(
-          0 => array("VALUE"=>"значение","DESCRIPTION"=>"описание значения"),
-          1 => array("VALUE"=>"значение2","DESCRIPTION"=>"описание значения2") 
-        );
-        CIBlockElement::SetPropertyValuesEx($ELEMENT_ID, $IBLOCK_ID, array($PROPERTY_CODE => $PROPERTY_VALUE));
-    }
-
+        CIBlockElement::SetPropertyValuesEx($ID, false, array("SVEZHIE_POSTUPLENIYA" => $quantity_new/*, "HIT" => array(153,154,155,156)*/));  // обновляем элемент
+    }                                                                                                                                        
 }
 
 

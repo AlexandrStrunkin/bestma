@@ -19,7 +19,7 @@ $htmlClass = ($_REQUEST && isset($_REQUEST['print']) ? 'print' : false);
 	<?$APPLICATION->ShowHead();?>
 	<?$APPLICATION->AddHeadString('<script>BX.message('.CUtil::PhpToJSObject( $MESS, false ).')</script>', true);?>
     <?$APPLICATION->AddHeadString('<link href="/local/templates/aspro_optimus/css/fonts.css" rel="stylesheet">');?>
-    <?$APPLICATION->AddHeadString('<script src="/local/templates/aspro_optimus/js/clamp.min.js">');?>
+    <?$APPLICATION->AddHeadString('<script src="/local/templates/aspro_optimus/js/clamp.min.js"></script>');?>
 	<?if(CModule::IncludeModule("aspro.optimus")) {COptimus::Start(SITE_ID);}?>
 	<!--[if gte IE 9]><style type="text/css">.basket_button, .button30, .icon {filter: none;}</style><![endif]-->
 	<link href='<?=CMain::IsHTTPS() ? 'https' : 'http'?>://fonts.googleapis.com/css?family=Ubuntu:400,500,700,400italic&subset=latin,cyrillic' rel='stylesheet' type='text/css'>
