@@ -5,7 +5,7 @@ if(is_null($_GET[init_off])) {
     }
 }
 
-define("HIT_NEW_XML_ID", "156");
+define("HIT_NEW_XML_ID", "156"); //ID значения с "Новыми поступлениями" у списка отвчечающего за вывод товаров на главной странице
              
 AddEventHandler("catalog", "OnGetOptimalPrice", "MyGetOptimalPrice");
 
