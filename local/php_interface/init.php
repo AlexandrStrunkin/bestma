@@ -4,6 +4,9 @@ if(is_null($_GET[init_off])) {
         require_once($_SERVER["DOCUMENT_ROOT"]."/bitrix/php_interface/functions.php");
     }
 }
+
+define("HIT_NEW_XML_ID", "156");
+             
 AddEventHandler("catalog", "OnGetOptimalPrice", "MyGetOptimalPrice");
 
 function MyGetOptimalPrice($productID, $quantity = 1, $arUserGroups = array(), $renewal = "N", $arPrices = array(), $siteID = false, $arDiscountCoupons = false)
@@ -141,43 +144,36 @@ class SVC
         echo "</pre>";
     }
 
-AddEventHandler("catalog", "OnBeforeProductUpdate", "QuantityAddHeandler");
+AddEventHandler("iblock", "OnBeforeIblockElementUpdate", "QuantityAddHeandler");
 
-// создаем обработчик события "OnBeforeProductUpdate"
-function QuantityAddHeandler($ID, &$arFields) {
-
+// создаем обработчик события "OnBeforeIblockElementUpdate"
+// Меняем значение множественного свойства с топами
+function QuantityAddHeandler(&$arFields) {
     $element_quantity = CCatalogProduct::GetList(
             array("QUANTITY" => "DESC"),
-            array("ID" => $ID),
+            array("ID" => $arFields['ID']),
             false,
             false
-        )->Fetch();
-    $db_props = CIBlockElement::GetProperty($element_quantity["ELEMENT_IBLOCK_ID"], $ID, array("sort" => "asc"), Array("CODE"=>"SVEZHIE_POSTUPLENIYA"));
-    $props_quantity = $db_props->Fetch(); 
-    
-    /*$db_testHit = CIBlockElement::GetProperty($element_quantity["ELEMENT_IBLOCK_ID"], $ID, array("sort" => "asc"), Array("HIT"=>"HIT"));
-    $testHit = $db_testHit->Fetch();
-    arshow($testHit);
-    die(1);*/
-     
-    if ($arFields["QUANTITY"] != '') {
-        if(($element_quantity["QUANTITY"] <= 0 && $arFields["QUANTITY"] > $element_quantity["QUANTITY"]) ||
-            ($element_quantity["QUANTITY"] > 0 && $element_quantity["QUANTITY"] == $arFields["QUANTITY"] && $props_quantity["VALUE"] == "Y")){
-
-                $quantity_new = "Y";  // свойству "свежие поступления" присваиваем значение "Y"
-
-        } else if(($element_quantity["QUANTITY"] > 0 && $arFields["QUANTITY"] <= 0) ||
-                ($element_quantity["QUANTITY"] > 0 && $arFields["QUANTITY"] > 0)) {
-
-                $quantity_new = "";  // свойству "свежие поступления" присваиваем значение "N"
-
-        } else if(($element_quantity["QUANTITY"] <= 0 && $arFields["QUANTITY"] <= 0) ||
-                ($element_quantity["QUANTITY"] > 0 && $element_quantity["QUANTITY"] < $arFields["QUANTITY"])) {
-                $quantity_new = '';
+        )->Fetch(); 
+    $db_hitValue = CIBlockElement::GetProperty($element_quantity["ELEMENT_IBLOCK_ID"], $arFields['ID'], array("sort" => "asc"), Array("CODE" => "HIT"));
+    while ($ob = $db_hitValue->GetNext()) {
+        $hitValue[] = $ob['VALUE'];
+    }
+    $newHit = '';          
+    foreach ($hitValue as $hitValueID => $propertyHitId) { 
+        if ($propertyHitId == HIT_NEW_XML_ID) {
+            if (!empty($arFields["QUANTITY"])) {
+                $newHit = 'Y';
+                array_splice($hitValue, $hitValueID, 1);                 
+            }                    
+        }          
+    }                                                                       
+    if (!empty($arFields["QUANTITY"])) {
+        if (($element_quantity["QUANTITY"] <= 0 && $arFields["QUANTITY"] > $element_quantity["QUANTITY"])
+            || ($element_quantity["QUANTITY"] > 0 && $element_quantity["QUANTITY"] == $arFields["QUANTITY"] && $newHit == "Y")) {
+                array_push($hitValue, HIT_NEW_XML_ID);  // свойству "свежие поступления" присваиваем значение "Y" 
         }
-        CIBlockElement::SetPropertyValuesEx($ID, false, array("SVEZHIE_POSTUPLENIYA" => $quantity_new/*, "HIT" => array(153,154,155,156)*/));  // обновляем элемент
-    }                                                                                                                                        
+        CIBlockElement::SetPropertyValuesEx($ID, false, array("HIT" => $hitValue));  // обновляем элемент
+    }                                                                                                                                                   
 }
-
-
 ?>
