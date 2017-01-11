@@ -155,11 +155,13 @@ function QuantityAddHeandler(&$arFields) {
             false,
             false
         )->Fetch(); 
+    //Собираем значения списка с множественным значением до обновления
     $db_hitValue = CIBlockElement::GetProperty($element_quantity["ELEMENT_IBLOCK_ID"], $arFields['ID'], array("sort" => "asc"), Array("CODE" => "HIT"));
     while ($ob = $db_hitValue->GetNext()) {
         $hitValue[] = $ob['VALUE'];
     }
     $newHit = '';          
+    //Если после обновления менялось количество товара убираем значение "свежие поступления" из свойства элемента
     foreach ($hitValue as $hitValueID => $propertyHitId) { 
         if ($propertyHitId == HIT_NEW_XML_ID) {
             if (!empty($arFields["QUANTITY"])) {
@@ -167,7 +169,9 @@ function QuantityAddHeandler(&$arFields) {
                 array_splice($hitValue, $hitValueID, 1);                 
             }                    
         }          
-    }                                                                       
+    }  
+    
+    //Если после обновления менялось количество товара устанавливаем значение "свежие поступления" если нужные условия                                                                     
     if (!empty($arFields["QUANTITY"])) {
         if (($element_quantity["QUANTITY"] <= 0 && $arFields["QUANTITY"] > $element_quantity["QUANTITY"])
             || ($element_quantity["QUANTITY"] > 0 && $element_quantity["QUANTITY"] == $arFields["QUANTITY"] && $newHit == "Y")) {
