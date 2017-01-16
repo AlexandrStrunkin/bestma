@@ -29,8 +29,8 @@ $aMenuLinks = Array(
 		"" 
 	),
 	Array(
-		"Магазины", 
-		"/contacts/stores/", 
+		"Акции", 
+		"/sale/", 
 		Array(), 
 		Array(), 
 		"" 

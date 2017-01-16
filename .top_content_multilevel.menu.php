@@ -16,7 +16,7 @@ $aMenuLinks = Array(
 	),
 	Array(
 		"Прайс", 
-		"/prices/", 
+		"/about/prices/", 
 		Array(), 
 		Array(), 
 		"" 
@@ -38,13 +38,6 @@ $aMenuLinks = Array(
 	Array(
 		"Контакты", 
 		"/contacts/", 
-		Array(), 
-		Array(), 
-		"" 
-	),
-	Array(
-		"Акции", 
-		"/sale/", 
 		Array(), 
 		Array(), 
 		"" 
