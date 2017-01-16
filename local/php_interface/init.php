@@ -144,19 +144,19 @@ class SVC
         echo "</pre>";
     }
 
-AddEventHandler("iblock", "OnBeforeIblockElementUpdate", "QuantityAddHeandler");
+AddEventHandler("catalog", "OnBeforeProductUpdate", "QuantityAddHeandler");
 
 // создаем обработчик события "OnBeforeIblockElementUpdate"
 // Меняем значение множественного свойства с топами
-function QuantityAddHeandler(&$arFields) {
+function QuantityAddHeandler($ID, &$arFields) {
     $element_quantity = CCatalogProduct::GetList(
             array("QUANTITY" => "DESC"),
             array("ID" => $arFields['ID']),
             false,
             false
-        )->Fetch(); 
+        )->Fetch();
     //Собираем значения списка с множественным значением до обновления
-    $db_hitValue = CIBlockElement::GetProperty($element_quantity["ELEMENT_IBLOCK_ID"], $arFields['ID'], array("sort" => "asc"), Array("CODE" => "HIT"));
+    $db_hitValue = CIBlockElement::GetProperty($element_quantity["ELEMENT_IBLOCK_ID"], $ID, array("sort" => "asc"), Array("CODE" => "HIT"));
     while ($ob = $db_hitValue->GetNext()) {
         $hitValue[] = $ob['VALUE'];
     }
