@@ -69,6 +69,8 @@ font.notetext{color:#333;}
 .wrap_md_row{margin:0px -15px;}
 .md-75, .md-66, .md-33, .md-25, .md-50, .wrap_md .news_wrap, .wrap_md .subscribe_wrap, .wrap_md .iblock{display:inline-block;vertical-align:top;box-sizing:border-box;-moz-box-sizing:border-box;-o-box-sizing:border-box;-webkit-box-sizing:border-box;font-size:13px;}
 .md-75{width:75%;}
+.middle .wrap_md .md-25{width:0%;}
+.middle .wrap_md .md-75{width:100%;}
 .md-66{width:66.66%;}
 .md-50{width:50%;}
 .md-33{width:33.33%;}
