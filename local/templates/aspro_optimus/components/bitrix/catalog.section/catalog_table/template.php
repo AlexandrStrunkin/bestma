@@ -341,7 +341,8 @@
                             </div>
                         </div>
                     </td>
-                    <?if((!$arItem["OFFERS"] && $arParams["DISPLAY_WISH_BUTTONS"] != "N" ) || ($arParams["DISPLAY_COMPARE"] == "Y")):?>
+                    <?//Условие всегда false, если менять видимость элемента разваливается таблица?>
+                    <?if(((!$arItem["OFFERS"] && $arParams["DISPLAY_WISH_BUTTONS"] != "N" ) || ($arParams["DISPLAY_COMPARE"] == "Y")) && false):?>
                         <td class="like_icons <?=(((!$arItem["OFFERS"] && $arParams["DISPLAY_WISH_BUTTONS"] != "N" && $arItem["CAN_BUY"]) && ($arParams["DISPLAY_COMPARE"] == "Y")) ? " full" : "")?>">
                             <div class="wrapp_stockers">
                                 <div class="like_icons">
