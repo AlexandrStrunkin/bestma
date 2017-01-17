@@ -99,14 +99,16 @@
                         <?if( !(empty($arItem["PREVIEW_PICTURE"]) || empty($arItem["DETAIL_PICTURE"]))) {?>
                         <div class="catalog_photo_popup"> 
                             <div class="popup_photo">
-                            <?if( !empty($arItem["PREVIEW_PICTURE"]) ):?>
-                                <img border="0" src="<?=$arItem["PREVIEW_PICTURE"]["SRC"]?>" alt="<?=$a_alt;?>" title="<?=$a_title;?>" />
-                            <?elseif( !empty($arItem["DETAIL_PICTURE"])):?>
-                                <?$img = CFile::ResizeImageGet($arItem["DETAIL_PICTURE"], array( "width" => 170, "height" => 170 ), BX_RESIZE_IMAGE_PROPORTIONAL, true);?>                                
-                                <img border="0" src="<?=$img["src"]?>" alt="<?=$a_alt;?>" title="<?=$a_title;?>" />
-                            <?else:?>
-                                <img border="0" src="<?=SITE_TEMPLATE_PATH?>/images/no_photo_medium.png" alt="<?=$a_alt;?>" title="<?=$a_title;?>" />
-                            <?endif;?>
+                                <a href="<?=$arItem["DETAIL_PAGE_URL"]?>">
+                                    <?if( !empty($arItem["PREVIEW_PICTURE"]) ):?>
+                                        <img border="0" src="<?=$arItem["PREVIEW_PICTURE"]["SRC"]?>" alt="<?=$a_alt;?>" title="<?=$a_title;?>" />
+                                    <?elseif( !empty($arItem["DETAIL_PICTURE"])):?>
+                                        <?$img = CFile::ResizeImageGet($arItem["DETAIL_PICTURE"], array( "width" => 170, "height" => 170 ), BX_RESIZE_IMAGE_PROPORTIONAL, true);?>                                
+                                        <img border="0" src="<?=$img["src"]?>" alt="<?=$a_alt;?>" title="<?=$a_title;?>" />
+                                    <?else:?>
+                                        <img border="0" src="<?=SITE_TEMPLATE_PATH?>/images/no_photo_medium.png" alt="<?=$a_alt;?>" title="<?=$a_title;?>" />
+                                    <?endif;?>
+                                </a>
                             </div>
                             <?foreach($arItem['PROPERTIES']['MORE_PHOTO']['VALUE'] as $slider_photo) { 
                                     $img = CFile::ResizeImageGet($slider_photo, array("width" => 170, "height" => 170), BX_RESIZE_IMAGE_PROPORTIONAL, true, array());

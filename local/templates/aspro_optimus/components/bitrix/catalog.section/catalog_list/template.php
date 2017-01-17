@@ -193,6 +193,36 @@
                                     </div>                    
                                 <? } ?>  
                                 <?/*=$arQuantityData["HTML"];*/?>
+                                <?if((!$arItem["OFFERS"] && $arParams["DISPLAY_WISH_BUTTONS"] != "N" ) || ($arParams["DISPLAY_COMPARE"] == "Y")):?>
+                                    <div class="like_icons">
+                                        <?if($arParams["DISPLAY_WISH_BUTTONS"] != "N"):?>
+                                            <?if(!$arItem["OFFERS"]):?>
+                                                <div class="wish_item_button">
+                                                    <span class="wish_item to" data-item="<?=$arItem["ID"]?>" data-iblock="<?=$arItem["IBLOCK_ID"]?>"><i></i><div><?=GetMessage('CATALOG_WISH')?></div></span>
+                                                    <span class="wish_item in added" style="display: none;" data-item="<?=$arItem["ID"]?>" data-iblock="<?=$arItem["IBLOCK_ID"]?>"><i></i><div><?=GetMessage('CATALOG_WISH_OUT')?></div></span>
+                                                </div>
+                                            <?elseif($arItem["OFFERS"] && !empty($arItem['OFFERS_PROP'])):?>
+                                                <div class="wish_item_button" style="display: none;">
+                                                    <span class="wish_item to <?=$arParams["TYPE_SKU"];?>" data-item="" data-iblock="<?=$arItem["IBLOCK_ID"]?>" data-offers="Y" data-props="<?=$arOfferProps?>"><i></i><div><?=GetMessage('CATALOG_WISH')?></div></span>
+                                                    <span class="wish_item in added <?=$arParams["TYPE_SKU"];?>" style="display: none;" data-item="" data-iblock="<?=$arItem["IBLOCK_ID"]?>"><i></i><div><?=GetMessage('CATALOG_WISH_OUT')?></div></span>
+                                                </div>
+                                            <?endif;?>
+                                        <?endif;?>
+                                        <?if($arParams["DISPLAY_COMPARE"] == "Y"):?>
+                                            <?if(!$arItem["OFFERS"] || $arParams["TYPE_SKU"] !== 'TYPE_1'):?>
+                                                <div class="compare_item_button">
+                                                    <span class="compare_item to" data-iblock="<?=$arParams["IBLOCK_ID"]?>" data-item="<?=$arItem["ID"]?>" ><i></i><div><?=GetMessage('CATALOG_COMPARE')?></div></span>
+                                                    <span class="compare_item in added" style="display: none;" data-iblock="<?=$arParams["IBLOCK_ID"]?>" data-item="<?=$arItem["ID"]?>"><i></i><div><?=GetMessage('CATALOG_COMPARE_OUT')?></div></span>
+                                                </div>
+                                            <?elseif($arItem["OFFERS"]):?>
+                                                <div class="compare_item_button">
+                                                    <span class="compare_item to <?=$arParams["TYPE_SKU"];?>" data-iblock="<?=$arParams["IBLOCK_ID"]?>" data-item="" ><i></i><div><?=GetMessage('CATALOG_COMPARE')?></div></span>
+                                                    <span class="compare_item in added <?=$arParams["TYPE_SKU"];?>" style="display: none;" data-iblock="<?=$arParams["IBLOCK_ID"]?>" data-item=""><i></i><div><?=GetMessage('CATALOG_COMPARE_OUT')?></div></span>
+                                                </div>
+                                            <?endif;?>
+                                        <?endif;?>
+                                    </div>
+                                <?endif;?>            
                                 <div class="article_block" style="display:none">
                                     <?if(isset($arItem['ARTICLE']) && $arItem['ARTICLE']['VALUE']){?>
                                         <?=$arItem['ARTICLE']['NAME'];?>: <?=$arItem['ARTICLE']['VALUE'];?>
@@ -234,38 +264,7 @@
                                     <span class="icons_fa char_title"><span><?=GetMessage('PROPERTIES')?></span></span>
                                 </div>
                             <?endif;?>
-                        </div>
-                        <?if((!$arItem["OFFERS"] && $arParams["DISPLAY_WISH_BUTTONS"] != "N" ) || ($arParams["DISPLAY_COMPARE"] == "Y")):?>
-                            <div class="like_icons">
-                                <?if($arParams["DISPLAY_WISH_BUTTONS"] != "N"):?>
-                                    <?if(!$arItem["OFFERS"]):?>
-                                        <div class="wish_item_button">
-                                            <span class="wish_item to" data-item="<?=$arItem["ID"]?>" data-iblock="<?=$arItem["IBLOCK_ID"]?>"><i></i><div><?=GetMessage('CATALOG_WISH')?></div></span>
-                                            <span class="wish_item in added" style="display: none;" data-item="<?=$arItem["ID"]?>" data-iblock="<?=$arItem["IBLOCK_ID"]?>"><i></i><div><?=GetMessage('CATALOG_WISH_OUT')?></div></span>
-                                        </div>
-                                    <?elseif($arItem["OFFERS"] && !empty($arItem['OFFERS_PROP'])):?>
-                                        <div class="wish_item_button" style="display: none;">
-                                            <span class="wish_item to <?=$arParams["TYPE_SKU"];?>" data-item="" data-iblock="<?=$arItem["IBLOCK_ID"]?>" data-offers="Y" data-props="<?=$arOfferProps?>"><i></i><div><?=GetMessage('CATALOG_WISH')?></div></span>
-                                            <span class="wish_item in added <?=$arParams["TYPE_SKU"];?>" style="display: none;" data-item="" data-iblock="<?=$arItem["IBLOCK_ID"]?>"><i></i><div><?=GetMessage('CATALOG_WISH_OUT')?></div></span>
-                                        </div>
-                                    <?endif;?>
-                                <?endif;?>
-                                <?if($arParams["DISPLAY_COMPARE"] == "Y"):?>
-                                    <?if(!$arItem["OFFERS"] || $arParams["TYPE_SKU"] !== 'TYPE_1'):?>
-                                        <div class="compare_item_button">
-                                            <span class="compare_item to" data-iblock="<?=$arParams["IBLOCK_ID"]?>" data-item="<?=$arItem["ID"]?>" ><i></i><div><?=GetMessage('CATALOG_COMPARE')?></div></span>
-                                            <span class="compare_item in added" style="display: none;" data-iblock="<?=$arParams["IBLOCK_ID"]?>" data-item="<?=$arItem["ID"]?>"><i></i><div><?=GetMessage('CATALOG_COMPARE_OUT')?></div></span>
-                                        </div>
-                                    <?elseif($arItem["OFFERS"]):?>
-                                        <div class="compare_item_button">
-                                            <span class="compare_item to <?=$arParams["TYPE_SKU"];?>" data-iblock="<?=$arParams["IBLOCK_ID"]?>" data-item="" ><i></i><div><?=GetMessage('CATALOG_COMPARE')?></div></span>
-                                            <span class="compare_item in added <?=$arParams["TYPE_SKU"];?>" style="display: none;" data-iblock="<?=$arParams["IBLOCK_ID"]?>" data-item=""><i></i><div><?=GetMessage('CATALOG_COMPARE_OUT')?></div></span>
-                                        </div>
-                                    <?endif;?>
-                                <?endif;?>
-                            </div>
-                        <?endif;?>
-                        <?//temp retail price?>                        
+                        </div>                        
                         <div class="retail_price">
                             <div class="retail_price_text"><?= GetMessage('RRC_TEXT')?></div>
                             <div class="retail_price_value"><?= $arItem["PRICES"][$arParams["RECOMENDED_RETAIL_PRICE"]]['PRINT_VALUE']?></div>
