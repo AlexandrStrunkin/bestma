@@ -1291,6 +1291,8 @@ body .stickers .sticker_recommend:before{background-position:-3px -135px;}
 
 /*price*/
 
+.catalog_detail .info_item .middle_info .prices_block .price.rrp{font-size:28px;color:#bf0025}
+
 .list .cost.prices .price.only_price.rrp{margin: 28px auto 2px;font-family: 'ClearSans-Bold';color: #00a2a1;font-size: 20px;font-weight: normal;} 
 .list .cost.prices .price.only_price{margin:13px auto 2px; display:inline-block; white-space:normal; float:right; font-family:'ClearSans-Medium';font-weight: normal;} 
 .list .cost.prices .price_name.rrp{font-size:15px;line-height:15px;margin:15px 0px 11px;clear:both;text-align: left;font-family:'ClearSans-Regular';color: #676767;}
