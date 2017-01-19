@@ -387,6 +387,9 @@ $APPLICATION->IncludeComponent(
 		"DETAIL_EXPANDABLES_TITLE" => "Аксессуары",
 		"DETAIL_ASSOCIATED_TITLE" => "Похожие товары",
 		"RECOMENDED_RETAIL_PRICE" => "PRICE_WHS_4",
+		"BIGDATA_PRICE" => array(
+			0 => "PRICE_WHS_3",
+		),
 		"SEF_URL_TEMPLATES" => array(
 			"sections" => "",
 			"section" => "#SECTION_CODE_PATH#/",
