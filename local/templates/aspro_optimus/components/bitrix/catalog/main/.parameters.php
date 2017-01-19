@@ -504,8 +504,17 @@
             "TYPE" => "LIST",
             "MULTIPLE" => "N",
             "VALUES" => $arPrice,
-        )
-    );                                   
+        ),
+    );   
+    $arTemplateParametersParts[] = array(
+        'BIGDATA_PRICE' => array(
+            "PARENT" => "PRICES",
+            "NAME" => GetMessage("BIGDATA_PRICE"),
+            "TYPE" => "LIST",
+            "MULTIPLE" => "Y",
+            "VALUES" => $arPrice,
+        ),
+    );                                 
 	//merge parameters to one array 
 	$arTemplateParameters = array();  
 	foreach($arTemplateParametersParts as $i => $part) { $arTemplateParameters = array_merge($arTemplateParameters, $part); }

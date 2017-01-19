@@ -6,7 +6,7 @@ use Bitrix\Main\Loader;
 use Bitrix\Main\ModuleManager;
 
 Loader::includeModule("iblock");
-Loader::includeModule("highloadblock");
+Loader::includeModule("highloadblock");                                                                                             
 
 // get current section ID
 global $OptimusSectionID;
@@ -276,7 +276,7 @@ if($arAccessories){
 							"PARTIAL_PRODUCT_PROPERTIES" => (isset($arParams["PARTIAL_PRODUCT_PROPERTIES"]) ? $arParams["PARTIAL_PRODUCT_PROPERTIES"] : ''),
 							"SHOW_OLD_PRICE" => $arParams['SHOW_OLD_PRICE'],
 							"SHOW_DISCOUNT_PERCENT" => $arParams['SHOW_DISCOUNT_PERCENT'],
-							"PRICE_CODE" => $arParams["PRICE_CODE"],
+							"PRICE_CODE" => $arParams["BIGDATA_PRICE"],
 							"SHOW_PRICE_COUNT" => $arParams["SHOW_PRICE_COUNT"],
 							"PRODUCT_SUBSCRIPTION" => $arParams['PRODUCT_SUBSCRIPTION'],
 							"PRICE_VAT_INCLUDE" => $arParams["PRICE_VAT_INCLUDE"],
@@ -351,7 +351,7 @@ if($arAccessories){
 									"SHOW_MEASURE" => $arParams["SHOW_MEASURE"],
 									"LINE_ELEMENT_COUNT" => $arParams["TOP_LINE_ELEMENT_COUNT"],
 									"PROPERTY_CODE" => $arParams["DETAIL_PROPERTY_CODE"],
-									"PRICE_CODE" => $arParams["PRICE_CODE"],
+									"PRICE_CODE" => $arParams["BIGDATA_PRICE"],
 									"USE_PRICE_COUNT" => $arParams["USE_PRICE_COUNT"],
 									"SHOW_PRICE_COUNT" => $arParams["SHOW_PRICE_COUNT"],
 									"PRICE_VAT_INCLUDE" => $arParams["PRICE_VAT_INCLUDE"],
