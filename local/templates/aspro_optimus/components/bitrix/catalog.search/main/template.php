@@ -207,7 +207,11 @@ if (is_array($arElements) && !empty($arElements))
 					"SHOW_DISCOUNT_PERCENT" => $arParams["SHOW_DISCOUNT_PERCENT"],
 					"SHOW_OLD_PRICE" => $arParams["SHOW_OLD_PRICE"],
 					"SALE_STIKER" => $arParams["SALE_STIKER"],
-					"SHOW_RATING" => $arParams["SHOW_RATING"],
+					"SHOW_RATING" => $arParams["SHOW_RATING"],                      
+                    "RECOMENDED_RETAIL_PRICE" => "PRICE_WHS_4",
+                    "BIGDATA_PRICE" => array(
+                        0 => "PRICE_WHS_3",
+                    ),
 					"SHOW_DISCOUNT_TIME" => $arParams["SHOW_DISCOUNT_TIME"],
 					"ADD_PROPERTIES_TO_BASKET" => (isset($arParams["ADD_PROPERTIES_TO_BASKET"]) ? $arParams["ADD_PROPERTIES_TO_BASKET"] : ''),
 					"PARTIAL_PRODUCT_PROPERTIES" => (isset($arParams["PARTIAL_PRODUCT_PROPERTIES"]) ? $arParams["PARTIAL_PRODUCT_PROPERTIES"] : ''),
