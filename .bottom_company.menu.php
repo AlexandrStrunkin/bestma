@@ -1,13 +1,6 @@
 <?
 $aMenuLinks = Array(
 	Array(
-		"О компании", 
-		"/company/", 
-		Array(), 
-		Array(), 
-		"" 
-	),
-	Array(
 		"Новости", 
 		"/company/news/", 
 		Array(), 
@@ -24,13 +17,6 @@ $aMenuLinks = Array(
 	Array(
 		"Вакансии", 
 		"/company/jobs/", 
-		Array(), 
-		Array(), 
-		"" 
-	),
-	Array(
-		"Акции", 
-		"/sale/", 
 		Array(), 
 		Array(), 
 		"" 
