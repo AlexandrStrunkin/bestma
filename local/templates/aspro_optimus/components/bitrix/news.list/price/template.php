@@ -38,40 +38,7 @@
                                     <? if ($arParams["DISPLAY_DATE"] != "N" && $arItem["DISPLAY_ACTIVE_FROM"]): ?>
                                         <span class="news-date-time"><? echo $arItem["DISPLAY_ACTIVE_FROM"] ?></span>
                                     <? endif ?>
-                                    <a href="<? echo $arItem["DISPLAY_PROPERTIES"]["PRICELIST"]["FILE_VALUE"]["SRC"] ?>"><b><? echo $arItem["NAME"] ?></b></a>
-                                    <?/*                                                                                                                                       
-									<div class="item <?=($bShowImage ? '' : 'wi')?>" id="<?=$this->GetEditAreaId($arItem['ID']);?>">
-										<?if($bShowImage):?>
-											<div class="image">
-												<?if(!empty($arItem["PREVIEW_PICTURE"]) && in_array('PREVIEW_PICTURE', $arParams['FIELD_CODE'])):?>
-													<?$arImage = CFile::ResizeImageGet($arItem["PREVIEW_PICTURE"]["ID"], array('width' => 170, 'height' => 170), BX_RESIZE_IMAGE_EXACT);?>
-													<img src="<?=$arImage['src']?>"  alt="<?=($arItem["PREVIEW_PICTURE"]["ALT"] ? $arItem["PREVIEW_PICTURE"]["ALT"] : ($arItem["DETAIL_PICTURE"]["ALT"] ? $arItem["DETAIL_PICTURE"]["ALT"] : $arItem["NAME"]))?>" title="<?=($arItem["PREVIEW_PICTURE"]["TITLE"] ? $arItem["PREVIEW_PICTURE"]["TITLE"] : $arItem["NAME"])?>" border="0" />
-												<?elseif(!empty($arItem["DETAIL_PICTURE"]) || in_array('DETAIL_PICTURE', $arParams['FIELD_CODE'])):?>
-													<?$arImage = CFile::ResizeImageGet($arItem["PREVIEW_PICTURE"]["ID"], array('width' => 170, 'height' => 170), BX_RESIZE_IMAGE_EXACT);?>
-													<img src="<?=$arImage['src']?>" alt="<?=($arItem["DETAIL_PICTURE"]["ALT"] ? $arItem["DETAIL_PICTURE"]["ALT"] : $arItem["NAME"])?>" title="<?=($arItem["DETAIL_PICTURE"]["TITLE"] ? $arItem["DETAIL_PICTURE"]["TITLE"] : $arItem["NAME"])?>" border="0" />
-												<?else:?>
-													<img src="<?=SITE_TEMPLATE_PATH?>/images/no_photo_medium.png" alt="<?=$arItem["NAME"]?>" title="<?=$arItem["NAME"]?>" />
-												<?endif;?>
-											</div>
-										<?endif;?>
-										<div class="info">
-											<?if($bShowName):?>
-												<div class="name">
-													<?=$firstName?><?if(strlen($secondName)):?>&nbsp;<br /><?=$secondName?><?endif;?>
-												</div>
-											<?endif;?>
-											<?if(strlen($arItem["DISPLAY_PROPERTIES"]["POST"]["VALUE"])):?>
-												<div class="post"><?=$arItem["DISPLAY_PROPERTIES"]["POST"]["VALUE"]?></div>
-											<?endif;?>
-											<?if(strlen($arItem["DISPLAY_PROPERTIES"]["PHONE"]["VALUE"])):?>
-												<div class="phone"><div><?=GetMessage('PHONE')?></div><?=$arItem["DISPLAY_PROPERTIES"]["PHONE"]["VALUE"]?></div>
-											<?endif;?>
-											<?if(strlen($arItem["DISPLAY_PROPERTIES"]["EMAIL"]["VALUE"])):?>
-												<div class="email"><div><?=GetMessage('EMAIL')?></div><a rel="nofollow" href="mailto:<?=$arItem["DISPLAY_PROPERTIES"]["EMAIL"]["VALUE"]?>"><?=$arItem["DISPLAY_PROPERTIES"]["EMAIL"]["VALUE"]?></a></div>
-											<?endif;?>
-										</div>						
-									</div>
-                                    */?>
+                                    <a href="<? echo $arItem["DISPLAY_PROPERTIES"]["PRICELIST"]["FILE_VALUE"]["SRC"] ?>"><b><? echo $arItem["NAME"] ?></b></a>   
 								<?endforeach;?>
 							</div>
 					<?if(count($arResult['SECTIONS']) > 1):?>
