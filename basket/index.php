@@ -24,7 +24,7 @@ $APPLICATION->SetTitle("Корзина");
 		"PATH_TO_ORDER" => SITE_DIR."order/",
 		"HIDE_COUPON" => "N",
 		"PRICE_VAT_SHOW_VALUE" => "Y",
-		"COUNT_DISCOUNT_4_ALL_QUANTITY" => "N",
+		"COUNT_DISCOUNT_4_ALL_QUANTITY" => "Y",
 		"USE_PREPAYMENT" => "N",
 		"SET_TITLE" => "N",
 		"AJAX_MODE_CUSTOM" => "Y",
