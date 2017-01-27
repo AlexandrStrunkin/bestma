@@ -4,19 +4,28 @@ $APPLICATION->SetTitle("Личный кабинет");
 ?><?
 global $USER;
 if(!$USER->isAuthorized()){
-	LocalRedirect(SITE_DIR.'auth/?backurl='.SITE_DIR.'personal/');
+    LocalRedirect(SITE_DIR.'auth/?backurl='.SITE_DIR.'personal/');
 }
 else{
-	//LocalRedirect(SITE_DIR.'personal/personal-data');?>
-	<?$APPLICATION->IncludeComponent(
-	"bitrix:sale.personal.section",
-	"",
-	Array(
-		"ACCOUNT_PAYMENT_ELIMINATED_PAY_SYSTEMS" => array(0=>"0",),
+    //LocalRedirect(SITE_DIR.'personal/personal-data');?>
+    <?$APPLICATION->IncludeComponent(
+	"bitrix:sale.personal.section", 
+	"main", 
+	array(
+		"ACCOUNT_PAYMENT_ELIMINATED_PAY_SYSTEMS" => array(
+			0 => "0",
+		),
 		"ACCOUNT_PAYMENT_PERSON_TYPE" => "1",
 		"ACCOUNT_PAYMENT_SELL_CURRENCY" => "RUB",
 		"ACCOUNT_PAYMENT_SELL_SHOW_FIXED_VALUES" => "Y",
-		"ACCOUNT_PAYMENT_SELL_TOTAL" => array(0=>"100",1=>"200",2=>"500",3=>"1000",4=>"5000",5=>"",),
+		"ACCOUNT_PAYMENT_SELL_TOTAL" => array(
+			0 => "100",
+			1 => "200",
+			2 => "500",
+			3 => "1000",
+			4 => "5000",
+			5 => "",
+		),
 		"ACCOUNT_PAYMENT_SELL_USER_INPUT" => "Y",
 		"ACTIVE_DATE_FORMAT" => "d.m.Y",
 		"CACHE_GROUPS" => "Y",
@@ -27,20 +36,24 @@ else{
 		"COMPOSITE_FRAME_MODE" => "A",
 		"COMPOSITE_FRAME_TYPE" => "AUTO",
 		"CUSTOM_PAGES" => "",
-		"CUSTOM_SELECT_PROPS" => array(),
+		"CUSTOM_SELECT_PROPS" => array(
+		),
 		"NAV_TEMPLATE" => "",
-		"ORDER_HISTORIC_STATUSES" => array(0=>"F",),
+		"ORDER_HISTORIC_STATUSES" => array(
+			0 => "F",
+		),
 		"PATH_TO_BASKET" => "/basket/",
 		"PATH_TO_CATALOG" => "/catalog/",
 		"PATH_TO_CONTACT" => "/contacts",
 		"PATH_TO_PAYMENT" => "/order/payment",
 		"PER_PAGE" => "20",
-		"PROP_1" => array(),
-		"PROP_2" => array(),
+		"PROP_1" => array(
+		),
+		"PROP_2" => array(
+		),
 		"SAVE_IN_SESSION" => "Y",
 		"SEF_FOLDER" => "/personal/",
 		"SEF_MODE" => "Y",
-		"SEF_URL_TEMPLATES" => Array("account"=>"account/","index"=>"index.php","order_cancel"=>"cancel/#ID#","order_detail"=>"orders/#ID#","orders"=>"orders/","private"=>"private/","profile"=>"profiles/","profile_detail"=>"profiles/#ID#","subscribe"=>"subscribe/"),
 		"SEND_INFO_PRIVATE" => "N",
 		"SET_TITLE" => "Y",
 		"SHOW_ACCOUNT_COMPONENT" => "Y",
@@ -53,7 +66,20 @@ else{
 		"SHOW_PROFILE_PAGE" => "Y",
 		"SHOW_SUBSCRIBE_PAGE" => "Y",
 		"USER_PROPERTY_PRIVATE" => "",
-		"USE_AJAX_LOCATIONS_PROFILE" => "N"
-	)
+		"USE_AJAX_LOCATIONS_PROFILE" => "N",
+		"COMPONENT_TEMPLATE" => "main",
+		"SEF_URL_TEMPLATES" => array(
+			"index" => "index.php",
+			"orders" => "orders/",
+			"account" => "account/",
+			"subscribe" => "subscribe/",
+			"profile" => "profiles/",
+			"profile_detail" => "profiles/#ID#",
+			"private" => "private/",
+			"order_detail" => "orders/#ID#",
+			"order_cancel" => "cancel/#ID#",
+		)
+	),
+	false
 );?>
 <?}?><?require($_SERVER["DOCUMENT_ROOT"]."/bitrix/footer.php");?>
