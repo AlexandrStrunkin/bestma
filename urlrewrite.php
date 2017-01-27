@@ -94,13 +94,13 @@ $arUrlRewrite = array(
 		"CONDITION" => "#^/catalog/#",
 		"RULE" => "",
 		"ID" => "bitrix:catalog",
-		"PATH" => "/catalog/index.php",
+		"PATH" => "/bitrix/templates/bestma/components/bitrix/search.page/search_and_buy/template.php",
 	),
 	array(
 		"CONDITION" => "#^/catalog/#",
 		"RULE" => "",
 		"ID" => "bitrix:catalog",
-		"PATH" => "/bitrix/templates/bestma/components/bitrix/search.page/search_and_buy/template.php",
+		"PATH" => "/catalog/index.php",
 	),
 	array(
 		"CONDITION" => "#^/news/#",
@@ -111,8 +111,8 @@ $arUrlRewrite = array(
 	array(
 		"CONDITION" => "#^/sale/#",
 		"RULE" => "",
-		"ID" => "bitrix:news",
-		"PATH" => "/sale/index.php",
+		"ID" => "bitrix:news",            
+		"PATH" => "/sale/index.php",   
 	),
 	array(
 		"CONDITION" => "#^/news/#",
