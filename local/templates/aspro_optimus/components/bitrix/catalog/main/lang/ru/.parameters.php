@@ -30,7 +30,8 @@
 	$MESS["SKU_DETAIL_ID"] = "Параметр определяющий SKU на детальной";
 	$MESS["SKU_DETAIL_ID_TIP"] = "Название параметра для определения торгового предложения на детальной странице товара";     
     
-    $MESS["RECOMENDED_RETAIL_PRICE"] = "Рекмендованная розничная цена";      
+    $MESS["RECOMENDED_RETAIL_PRICE"] = "Рекомендуемая розничная цена";  
+    $MESS["BIGDATA_PRICE"] = "Цена для вывода в BigData";       
 	
 	$MESS["DEFAULT_LIST_TEMPLATE"] = "Показывать товары в разделе по умолчанию";
 	$MESS["DEFAULT_LIST_TEMPLATE_TABLE"] = "таблицей";

@@ -5,7 +5,7 @@ if(is_null($_GET[init_off])) {
     }
 }
 
-define("HIT_NEW_XML_ID", "156"); //ID значения с "Новыми поступлениями" у списка отвчечающего за вывод товаров на главной странице
+define("HIT_NEW_XML_ID", "155"); //ID значения с "Новыми поступлениями" у списка отвчечающего за вывод товаров на главной странице
              
 AddEventHandler("catalog", "OnGetOptimalPrice", "MyGetOptimalPrice");
 
@@ -144,23 +144,23 @@ class SVC
         echo "</pre>";
     }
 
-AddEventHandler("iblock", "OnBeforeIblockElementUpdate", "QuantityAddHeandler");
+AddEventHandler("catalog", "OnBeforeProductUpdate", "QuantityAddHeandler");
 
 // создаем обработчик события "OnBeforeIblockElementUpdate"
 // Меняем значение множественного свойства с топами
-function QuantityAddHeandler(&$arFields) {
+function QuantityAddHeandler($ID, &$arFields) {
     $element_quantity = CCatalogProduct::GetList(
             array("QUANTITY" => "DESC"),
-            array("ID" => $arFields['ID']),
+            array("ID" => $ID),
             false,
             false
-        )->Fetch(); 
+        )->Fetch();            
     //Собираем значения списка с множественным значением до обновления
-    $db_hitValue = CIBlockElement::GetProperty($element_quantity["ELEMENT_IBLOCK_ID"], $arFields['ID'], array("sort" => "asc"), Array("CODE" => "HIT"));
-    while ($ob = $db_hitValue->GetNext()) {
+    $db_hitValue = CIBlockElement::GetProperty($element_quantity["ELEMENT_IBLOCK_ID"], $ID, array("sort" => "asc"), Array("CODE" => "HIT"));
+    while ($ob = $db_hitValue->GetNext()) { 
         $hitValue[] = $ob['VALUE'];
     }
-    $newHit = '';          
+    $newHit = '';                                    
     //Если после обновления менялось количество товара убираем значение "свежие поступления" из свойства элемента
     foreach ($hitValue as $hitValueID => $propertyHitId) { 
         if ($propertyHitId == HIT_NEW_XML_ID) {
@@ -169,15 +169,14 @@ function QuantityAddHeandler(&$arFields) {
                 array_splice($hitValue, $hitValueID, 1);                 
             }                    
         }          
-    }  
-    
-    //Если после обновления менялось количество товара устанавливаем значение "свежие поступления" если нужные условия                                                                     
+    }         
+    //Если после обновления менялось количество товара устанавливаем значение "свежие поступления" если нужные условия выполнились                                                
     if (!empty($arFields["QUANTITY"])) {
         if (($element_quantity["QUANTITY"] <= 0 && $arFields["QUANTITY"] > $element_quantity["QUANTITY"])
             || ($element_quantity["QUANTITY"] > 0 && $element_quantity["QUANTITY"] == $arFields["QUANTITY"] && $newHit == "Y")) {
                 array_push($hitValue, HIT_NEW_XML_ID);  // свойству "свежие поступления" присваиваем значение "Y" 
         }
         CIBlockElement::SetPropertyValuesEx($ID, false, array("HIT" => $hitValue));  // обновляем элемент
-    }                                                                                                                                                   
+    }                                                                                                                    
 }
 ?>

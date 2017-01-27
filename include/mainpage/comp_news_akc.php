@@ -1,9 +1,6 @@
 <?if(!defined('B_PROLOG_INCLUDED') || B_PROLOG_INCLUDED !== true) die();?>
-<?$APPLICATION->IncludeComponent(
-	"bitrix:news.list", 
-	"front_akc", 
-	array(
-		"IBLOCK_TYPE" => "aspro_optimus_content",
+<?$APPLICATION->IncludeComponent("bitrix:news.list", "front_akc", array(
+	"IBLOCK_TYPE" => "aspro_optimus_content",
 		"IBLOCK_ID" => "83",
 		"NEWS_COUNT" => "4",
 		"SORT_BY1" => "ACTIVE_FROM",
@@ -65,6 +62,6 @@
 	),
 	false,
 	array(
-		"ACTIVE_COMPONENT" => "Y"
+	"ACTIVE_COMPONENT" => "N"
 	)
 );?>

@@ -24,12 +24,12 @@ $APPLICATION->SetTitle("Помощь");
 <h4>
 Доставка</h4>
 <p>
-	 В зависимости от места жительства вам предложат варианты доставки. Выберите любой удобный способ. Подробнее об условиях доставки читайте в разделе «<a target="_blank" href="<?=SITE_DIR;?>help/delivery/">Доставка</a>».
+	 В зависимости от места жительства вам предложат варианты доставки. Выберите любой удобный способ. Подробнее об условиях доставки читайте в разделе «<a href="<?=SITE_DIR;?>help/delivery/">Доставка</a>».
 </p>
 <h4>
 Оплата</h4>
 <p>
-	 Выберите оптимальный способ оплаты. Подробнее о всех вариантах читайте в разделе «<a target="_blank" href="<?=SITE_DIR;?>help/payment/">Оплата</a>»
+	 Выберите оптимальный способ оплаты. Подробнее о всех вариантах читайте в разделе «<a href="<?=SITE_DIR;?>help/payment/">Оплата</a>»
 </p>
 <h4>
 Покупатель</h4>
@@ -47,15 +47,15 @@ $APPLICATION->SetTitle("Помощь");
  <span style="color: #ff0000;"><br>
  </span><span style="color: #ff0000;"><br>
  </span><span style="color: #ff0000;"><i>Обращаем ваше внимание на то, что минимальная сумма заказа в оптовом интернет- магазине BESTMA составляет 10.000р.&nbsp;</i></span><span style="color: #ff0000; font-family: 'Times New Roman', Times;"><i>&nbsp;&nbsp;&nbsp;</i></span><br>
-<i> </i><span style="font-family: 'Times New Roman', Times;"><i>
+ <i> </i><span style="font-family: 'Times New Roman', Times;"><i>
 Условия перехода с одной категории цен на другую:&nbsp;</i></span><br>
-<i> </i><span style="font-family: 'Times New Roman', Times;"><i>
+ <i> </i><span style="font-family: 'Times New Roman', Times;"><i>
 1. "Опт-1" Необходимо купить, либо единовременно не менее, чем на 10000 рублей, либо сумма покупок в нашей компании за текущий или за прошлый месяцы была не менее 10000 рублей.&nbsp;</i></span><br>
-<i> </i><span style="font-family: 'Times New Roman', Times;"><i>
+ <i> </i><span style="font-family: 'Times New Roman', Times;"><i>
 2. "Опт-2" Предоставляется либо при покупке единовременно не менее, чем на 30000 рублей, либо сумма покупок в нашей компании за текущий или за прошлый месяцы была не менее 30000 рублей.&nbsp;</i></span><br>
-<i> </i><span style="font-family: 'Times New Roman', Times;"><i>
+ <i> </i><span style="font-family: 'Times New Roman', Times;"><i>
 3. "Опт-3" Предоставляется либо при покупке единовременно не менее, чем на 80000 рублей, либо сумма покупок в нашей компании за текущий или за прошлый месяцы была не менее 80000 рублей.&nbsp;</i></span><br>
-<i> </i><span style="font-family: 'Times New Roman', Times;"><i>
+ <i> </i><span style="font-family: 'Times New Roman', Times;"><i>
 4. При покупке свыше 150000 рублей предоставляется индивидуальная категория цен.&nbsp;</i></span><br>
  <span style="font-family: 'Times New Roman', Times;"> </span>
 <p>

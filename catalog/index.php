@@ -139,7 +139,7 @@ $APPLICATION->IncludeComponent(
 		"SHOW_SECTION_LIST_PICTURES" => "Y",
 		"PAGE_ELEMENT_COUNT" => "20",
 		"LINE_ELEMENT_COUNT" => "4",
-		"ELEMENT_SORT_FIELD" => "name",
+		"ELEMENT_SORT_FIELD" => "shows",
 		"ELEMENT_SORT_ORDER" => "asc",
 		"ELEMENT_SORT_FIELD2" => "shows",
 		"ELEMENT_SORT_ORDER2" => "asc",
@@ -387,6 +387,9 @@ $APPLICATION->IncludeComponent(
 		"DETAIL_EXPANDABLES_TITLE" => "Аксессуары",
 		"DETAIL_ASSOCIATED_TITLE" => "Похожие товары",
 		"RECOMENDED_RETAIL_PRICE" => "PRICE_WHS_4",
+		"BIGDATA_PRICE" => array(
+			0 => "PRICE_WHS_3",
+		),
 		"SEF_URL_TEMPLATES" => array(
 			"sections" => "",
 			"section" => "#SECTION_CODE_PATH#/",

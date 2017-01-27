@@ -1,4 +1,4 @@
-<?if(!defined("B_PROLOG_INCLUDED") || B_PROLOG_INCLUDED!==true)die();?>
+<?if(!defined("B_PROLOG_INCLUDED") || B_PROLOG_INCLUDED!==true)die();?>      
 <div class="basket_props_block" id="bx_basket_div_<?=$arResult["ID"];?>" style="display: none;">
 	<?if (!empty($arResult['PRODUCT_PROPERTIES_FILL'])){
 		foreach ($arResult['PRODUCT_PROPERTIES_FILL'] as $propID => $propInfo){?>
@@ -387,9 +387,16 @@ setViewedProduct(<?=$arResult['ID']?>, <?=CUtil::PhpToJSObject($arViewedData, fa
 								</div>
 							<?}?>
 						<?}else{?>
+                            <?if(strlen($arResult["PRICES"][$arParams["RECOMENDED_RETAIL_PRICE"]]["PRINT_DISCOUNT_VALUE"])) {?>
+                                <div class="price_name"><?=GetMessage("RECOMENDED_RETAIL_PRICE");?></div>
+                                <div class="price rrp">                                
+                                        <?=$arResult["PRICES"][$arParams["RECOMENDED_RETAIL_PRICE"]]["PRINT_DISCOUNT_VALUE"];?>                           
+                                </div>                            
+                            <?}?> 
 							<?
 							$arCountPricesCanAccess = 0;
 							$min_price_id=0;
+                            
 							foreach( $arResult["PRICES"] as $key => $arPrice ) { if($arPrice["CAN_ACCESS"]){$arCountPricesCanAccess++;} }?>
 							<?foreach($arResult["PRICES"] as $key => $arPrice){?>
 								<?if($arPrice["CAN_ACCESS"] && ($key != $arParams["RECOMENDED_RETAIL_PRICE"])){
@@ -435,13 +442,7 @@ setViewedProduct(<?=$arResult['ID']?>, <?=CUtil::PhpToJSObject($arViewedData, fa
 									<?}?>
 								<?}?>
 							<?}?>
-						<?}?>
-                        <?if(strlen($arResult["PRICES"][$arParams["RECOMENDED_RETAIL_PRICE"]]["PRINT_DISCOUNT_VALUE"])) {?>
-                            <div class="price_name"><?=GetMessage("RECOMENDED_RETAIL_PRICE");?></div>
-                            <div class="price">                                
-                                    <?=$arResult["PRICES"][$arParams["RECOMENDED_RETAIL_PRICE"]]["PRINT_DISCOUNT_VALUE"];?>                           
-                            </div>                            
-                        <?}?>                                                                                         
+						<?}?>                                                                                        
 					</div>
 					<?if($arParams["SHOW_DISCOUNT_TIME"]=="Y"){?>
 						<?$arDiscounts = CCatalogDiscount::GetDiscountByProduct( $arResult["ID"], $USER->GetUserGroupArray(), "N", $min_price_id, SITE_ID );

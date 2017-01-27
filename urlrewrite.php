@@ -109,16 +109,16 @@ $arUrlRewrite = array(
 		"PATH" => "/news/index.php",
 	),
 	array(
+		"CONDITION" => "#^/sale/#",
+		"RULE" => "",
+		"ID" => "bitrix:news",            
+		"PATH" => "/sale/index.php",   
+	),
+	array(
 		"CONDITION" => "#^/news/#",
 		"RULE" => "",
 		"ID" => "bitrix:news",
 		"PATH" => "/folder/index.php",
-	),
-	array(
-		"CONDITION" => "#^/sale/#",
-		"RULE" => "",
-		"ID" => "bitrix:news",
-		"PATH" => "/sale/index.php",
 	),
 );
 

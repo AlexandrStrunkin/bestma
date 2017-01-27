@@ -9,4 +9,4 @@
 	 В лице нашей компании Вы получаете надежного партнера для развития Вашего бизнеса!&nbsp;<br>
  </span>
 </p>
- <span class="button big_btn bold"><a href="<?=SITE_DIR?>/company"><span style="color: #ffffff;">Подробнее</span></a></span>
+ <span class="button big_btn bold"><a href="/company/"><span style="color: #ffffff;">Подробнее</span></a></span>
