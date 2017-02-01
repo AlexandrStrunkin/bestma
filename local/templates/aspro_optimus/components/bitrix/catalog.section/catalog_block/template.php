@@ -138,25 +138,25 @@
                             </div>
                             <? } ?>
                         <div>     
-                            <? if ($totalCount <= 5) { ?>
+                            <? if ($totalCount <= $arResult['STOCK_INFO']["IN_STOCK1_COUNT"]) { ?>
                                 <div class="item-stock quantity_1">
                                     <span class="icon stock"></span>
-                                    <span class="value"><?= GetMessage('QUANTITY_1')?></span>
+                                    <span class="value"><?= $arResult['STOCK_INFO']["IN_STOCK1_NAME"]?></span>
                                 </div>          
-                            <? } elseif (($totalCount > 5) && ($totalCount <= 10)) { ?>
+                            <? } elseif (($totalCount > $arResult['STOCK_INFO']["IN_STOCK1_COUNT"]) && ($totalCount <= $arResult['STOCK_INFO']["IN_STOCK2_COUNT"])) { ?>
                                 <div class="item-stock quantity_2">
                                     <span class="icon stock"></span>
-                                    <span class="value"><?= GetMessage('QUANTITY_2')?></span>
+                                    <span class="value"><?= $arResult['STOCK_INFO']["IN_STOCK2_NAME"]?></span>
                                 </div>        
-                            <? } elseif (($totalCount > 10) && ($totalCount <= 50)) { ?>
+                            <? } elseif (($totalCount > $arResult['STOCK_INFO']["IN_STOCK2_COUNT"]) && ($totalCount <= $arResult['STOCK_INFO']["IN_STOCK3_COUNT"])) { ?>
                                 <div class="item-stock quantity_3">
                                     <span class="icon stock"></span>
-                                    <span class="value"><?= GetMessage('QUANTITY_3')?></span>
+                                    <span class="value"><?= $arResult['STOCK_INFO']["IN_STOCK3_NAME"]?></span>
                                 </div>        
-                            <? } elseif ($totalCount > 50) { ?>
+                            <? } elseif ($totalCount > $arResult['STOCK_INFO']["IN_STOCK3_COUNT"]) { ?>
                                 <div class="item-stock quantity_4">
                                     <span class="icon stock"></span>
-                                    <span class="value"><?= GetMessage('QUANTITY_4')?></span>
+                                    <span class="value"><?= $arResult['STOCK_INFO']["IN_STOCK4_NAME"]?></span>
                                 </div>                    
                             <? } ?>                             
                             <?/*=$arQuantityData["HTML"];*/?>
