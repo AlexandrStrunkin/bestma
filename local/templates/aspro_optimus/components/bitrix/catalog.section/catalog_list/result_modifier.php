@@ -500,4 +500,19 @@ if (!empty($arResult['ITEMS'])){
 		}
 	}
 }
+
+//Получаем информацию из инфоблока с текстом и количеством остатков на складе
+$arFields = array();
+$arSelect = Array("ID", "PROPERTY_IN_STOCK1_NAME", "PROPERTY_IN_STOCK1_COUNT", "PROPERTY_IN_STOCK2_NAME", "PROPERTY_IN_STOCK2_COUNT", "PROPERTY_IN_STOCK3_NAME", "PROPERTY_IN_STOCK3_COUNT", "PROPERTY_IN_STOCK4_NAME");
+$arFilter = Array("ID" => CATALOG_STOCK_ELEMENT_ID);
+$res = CIBlockElement::GetList(Array(), $arFilter, false, Array(), $arSelect);
+$arFields = $res->Fetch();
+$arStock["IN_STOCK1_NAME"] = $arFields['PROPERTY_IN_STOCK1_NAME_VALUE'];
+$arStock["IN_STOCK1_COUNT"] = $arFields['PROPERTY_IN_STOCK1_COUNT_VALUE'];
+$arStock["IN_STOCK2_NAME"] = $arFields['PROPERTY_IN_STOCK2_NAME_VALUE'];
+$arStock["IN_STOCK2_COUNT"] = $arFields['PROPERTY_IN_STOCK2_COUNT_VALUE'];
+$arStock["IN_STOCK3_NAME"] = $arFields['PROPERTY_IN_STOCK3_NAME_VALUE'];
+$arStock["IN_STOCK3_COUNT"] = $arFields['PROPERTY_IN_STOCK3_COUNT_VALUE'];
+$arStock["IN_STOCK4_NAME"] = $arFields['PROPERTY_IN_STOCK4_NAME_VALUE'];
+$arResult['STOCK_INFO'] = $arStock;  
 ?>

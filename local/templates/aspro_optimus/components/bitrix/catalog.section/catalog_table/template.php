@@ -274,46 +274,46 @@
                         </div>                    
                     <td class="quantity-cell">
                     <?/*$totalCount*/?>
-                    <? if ($totalCount <= 5) { ?> 
+                    <? if ($totalCount <= $arResult['STOCK_INFO']["IN_STOCK1_COUNT"]) { ?> 
                         <div class="item-stock quantity_1">
                             <span class="icon stock"></span>                            
                         </div>
                         <div class="value_block quantity_1">
                             <div class="value_block_triangle"></div>
-                            <div class="value"><?= GetMessage("QUANTITY_1")?></div>
+                            <div class="value"><?=$arResult['STOCK_INFO']["IN_STOCK1_NAME"]?></div>
                             <br>
-                            <div class="add_value"><?= GetMessage("QUANTITY_1_ADD")?></div>
+                            <div class="add_value">(Ð¼ÐµÐ½ÐµÐµ <?= $arResult['STOCK_INFO']["IN_STOCK1_COUNT"]?>)</div>
                         </div>          
-                    <? } elseif (($totalCount > 5) && ($totalCount <= 10)) { ?>
+                    <? } elseif (($totalCount > $arResult['STOCK_INFO']["IN_STOCK1_COUNT"]) && ($totalCount <= $arResult['STOCK_INFO']["IN_STOCK2_COUNT"])) { ?>
                         <div class="item-stock quantity_2">
                             <span class="icon stock"></span>
                             
                         </div> 
                         <div class="value_block quantity_2">
                             <div class="value_block_triangle"></div>
-                            <div class="value"><?= GetMessage("QUANTITY_2")?></div>
+                            <div class="value"><?=$arResult['STOCK_INFO']["IN_STOCK2_NAME"]?></div>
                             <br>
-                            <div class="add_value"><?= GetMessage("QUANTITY_2_ADD")?></div>
+                            <div class="add_value">(Ð¾Ñ‚ <?= $arResult['STOCK_INFO']["IN_STOCK1_COUNT"]?> Ð´Ð¾ <?= $arResult['STOCK_INFO']["IN_STOCK2_COUNT"]?>)</div>
                         </div>       
-                    <? } elseif (($totalCount > 10) && ($totalCount <= 50)) { ?>
+                    <? } elseif (($totalCount > $arResult['STOCK_INFO']["IN_STOCK2_COUNT"]) && ($totalCount <= $arResult['STOCK_INFO']["IN_STOCK3_COUNT"])) { ?>
                         <div class="item-stock quantity_3">
                             <span class="icon stock"></span>  
                         </div>
                         <div class="value_block quantity_3">
                             <div class="value_block_triangle"></div>
-                            <div class="value"><?= GetMessage("QUANTITY_3")?></div>
+                            <div class="value"><?=$arResult['STOCK_INFO']["IN_STOCK3_NAME"]?></div>
                             <br>
-                            <div class="add_value"><?= GetMessage("QUANTITY_3_ADD")?></div>
+                            <div class="add_value">(Ð¾Ñ‚ <?= $arResult['STOCK_INFO']["IN_STOCK2_COUNT"]?> Ð´Ð¾ <?= $arResult['STOCK_INFO']["IN_STOCK3_COUNT"]?>)</div>
                         </div>        
-                    <? } elseif ($totalCount > 50) { ?>
+                    <? } elseif ($totalCount > $arResult['STOCK_INFO']["IN_STOCK3_COUNT"]) { ?>
                         <div class="item-stock quantity_4">
                             <span class="icon stock"></span>
                         </div>
                         <div class="value_block quantity_4">
                             <div class="value_block_triangle"></div>
-                            <div class="value"><?= GetMessage("QUANTITY_4")?></div>
+                            <div class="value"><?=$arResult['STOCK_INFO']["IN_STOCK4_NAME"]?></div>
                             <br>
-                            <div class="add_value"><?= GetMessage("QUANTITY_4_ADD")?></div>
+                            <div class="add_value">(Ð±Ð¾Ð»ÐµÐµ <?= $arResult['STOCK_INFO']["IN_STOCK3_COUNT"]?>)</div>
                         </div>                   
                     <? } ?> 
                         <?/*=$arQuantityData["HTML"];*/?>
@@ -341,7 +341,7 @@
                             </div>
                         </div>
                     </td>
-                    <?//Óñëîâèå âñåãäà false, åñëè ìåíÿòü âèäèìîñòü ýëåìåíòà ðàçâàëèâàåòñÿ òàáëèöà?>
+                    <?//Ð£ÑÐ»Ð¾Ð²Ð¸Ðµ Ð²ÑÐµÐ³Ð´Ð° false, ÐµÑÐ»Ð¸ Ð¼ÐµÐ½ÑÑ‚ÑŒ Ð²Ð¸Ð´Ð¸Ð¼Ð¾ÑÑ‚ÑŒ ÑÐ»ÐµÐ¼ÐµÐ½Ñ‚Ð° Ñ€Ð°Ð·Ð²Ð°Ð»Ð¸Ð²Ð°ÐµÑ‚ÑÑ Ñ‚Ð°Ð±Ð»Ð¸Ñ†Ð°?>
                     <?if(((!$arItem["OFFERS"] && $arParams["DISPLAY_WISH_BUTTONS"] != "N" ) || ($arParams["DISPLAY_COMPARE"] == "Y")) && false):?>
                         <td class="like_icons <?=(((!$arItem["OFFERS"] && $arParams["DISPLAY_WISH_BUTTONS"] != "N" && $arItem["CAN_BUY"]) && ($arParams["DISPLAY_COMPARE"] == "Y")) ? " full" : "")?>">
                             <div class="wrapp_stockers">

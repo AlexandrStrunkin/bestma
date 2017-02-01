@@ -5,7 +5,11 @@ if(is_null($_GET[init_off])) {
     }
 }
 
-define("HIT_NEW_XML_ID", "155"); //ID значения с "Новыми поступлениями" у списка отвчечающего за вывод товаров на главной странице
+if(file_exists($_SERVER["DOCUMENT_ROOT"]."/local/php_interface/include/.config.php")) {
+    require_once($_SERVER["DOCUMENT_ROOT"]."/local/php_interface/include/.config.php");
+}                                                                                     
+
+define("HIT_NEW_XML_ID", "155"); //ID значения с "Новыми поступлениями" у списка отвчечающего за вывод товаров на главной странице 
              
 AddEventHandler("catalog", "OnGetOptimalPrice", "MyGetOptimalPrice");
 
