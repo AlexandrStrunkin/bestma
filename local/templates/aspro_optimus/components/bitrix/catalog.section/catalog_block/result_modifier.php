@@ -501,7 +501,7 @@ if (!empty($arResult['ITEMS'])){
 	}
 }
 
-//Получаем информацию из инфоблока с текстом и количеством остатков на складе
+//РџРѕР»СѓС‡Р°РµРј РёРЅС„РѕСЂРјР°С†РёСЋ РёР· РёРЅС„РѕР±Р»РѕРєР° СЃ С‚РµРєСЃС‚РѕРј Рё РєРѕР»РёС‡РµСЃС‚РІРѕРј РѕСЃС‚Р°С‚РєРѕРІ РЅР° СЃРєР»Р°РґРµ
 $arFields = array();
 $arSelect = Array("ID", "PROPERTY_IN_STOCK1_NAME", "PROPERTY_IN_STOCK1_COUNT", "PROPERTY_IN_STOCK2_NAME", "PROPERTY_IN_STOCK2_COUNT", "PROPERTY_IN_STOCK3_NAME", "PROPERTY_IN_STOCK3_COUNT", "PROPERTY_IN_STOCK4_NAME");
 $arFilter = Array("ID" => CATALOG_STOCK_ELEMENT_ID);
@@ -514,5 +514,5 @@ $arStock["IN_STOCK2_COUNT"] = $arFields['PROPERTY_IN_STOCK2_COUNT_VALUE'];
 $arStock["IN_STOCK3_NAME"] = $arFields['PROPERTY_IN_STOCK3_NAME_VALUE'];
 $arStock["IN_STOCK3_COUNT"] = $arFields['PROPERTY_IN_STOCK3_COUNT_VALUE'];
 $arStock["IN_STOCK4_NAME"] = $arFields['PROPERTY_IN_STOCK4_NAME_VALUE'];
-$arResult['STOCK_INFO'] = $arStock;  
+$arResult['STOCK_INFO'] = $arStock;                       
 ?>
