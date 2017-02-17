@@ -390,10 +390,13 @@ $APPLICATION->IncludeComponent(
 		"BIGDATA_PRICE" => array(
 			0 => "PRICE_WHS_3",
 		),
+		"HIDE_NOT_AVAILABLE_OFFERS" => "N",
+		"DETAIL_STRICT_SECTION_CHECK" => "N",
+		"COMPATIBLE_MODE" => "Y",
 		"SEF_URL_TEMPLATES" => array(
 			"sections" => "",
-			"section" => "#SECTION_CODE_PATH#/",
-			"element" => "#SECTION_CODE_PATH#/#ELEMENT_ID#/",
+			"section" => "#SECTION_CODE#/",
+			"element" => "#SECTION_CODE#/#ELEMENT_CODE#/",
 			"compare" => "compare.php?action=#ACTION_CODE#",
 			"smart_filter" => "#SECTION_CODE_PATH#/filter/#SMART_FILTER_PATH#/apply/",
 		),
