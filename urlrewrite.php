@@ -73,16 +73,16 @@ $arUrlRewrite = array(
 		"PATH" => "/info/brand/index.php",
 	),
 	array(
-		"CONDITION" => "#^/personal/#",
-		"RULE" => "",
-		"ID" => "bitrix:sale.personal.section",
-		"PATH" => "/personal/index.php",
-	),
-	array(
 		"CONDITION" => "#^/services/#",
 		"RULE" => "",
 		"ID" => "bitrix:news",
 		"PATH" => "/services/index.php",
+	),
+	array(
+		"CONDITION" => "#^/personal/#",
+		"RULE" => "",
+		"ID" => "bitrix:sale.personal.section",
+		"PATH" => "/personal/index.php",
 	),
 	array(
 		"CONDITION" => "#^/products/#",
@@ -94,31 +94,31 @@ $arUrlRewrite = array(
 		"CONDITION" => "#^/catalog/#",
 		"RULE" => "",
 		"ID" => "bitrix:catalog",
-		"PATH" => "/bitrix/templates/bestma/components/bitrix/search.page/search_and_buy/template.php",
+		"PATH" => "/catalog/index.php",
 	),
 	array(
 		"CONDITION" => "#^/catalog/#",
 		"RULE" => "",
 		"ID" => "bitrix:catalog",
-		"PATH" => "/catalog/index.php",
-	),
-	array(
-		"CONDITION" => "#^/news/#",
-		"RULE" => "",
-		"ID" => "bitrix:news",
-		"PATH" => "/news/index.php",
+		"PATH" => "/bitrix/templates/bestma/components/bitrix/search.page/search_and_buy/template.php",
 	),
 	array(
 		"CONDITION" => "#^/sale/#",
 		"RULE" => "",
-		"ID" => "bitrix:news",            
-		"PATH" => "/sale/index.php",   
+		"ID" => "bitrix:news",
+		"PATH" => "/sale/index.php",
 	),
 	array(
 		"CONDITION" => "#^/news/#",
 		"RULE" => "",
 		"ID" => "bitrix:news",
 		"PATH" => "/folder/index.php",
+	),
+	array(
+		"CONDITION" => "#^/news/#",
+		"RULE" => "",
+		"ID" => "bitrix:news",
+		"PATH" => "/news/index.php",
 	),
 );
 
