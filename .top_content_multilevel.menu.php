@@ -15,7 +15,7 @@ $aMenuLinks = Array(
 		"" 
 	),
 	Array(
-		"Прайс", 
+		"Оптовый прайс", 
 		"/about/prices/", 
 		Array(), 
 		Array(), 

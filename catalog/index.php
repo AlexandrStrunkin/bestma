@@ -1,4 +1,5 @@
 <?require($_SERVER["DOCUMENT_ROOT"]."/bitrix/header.php");
+$APPLICATION->SetPageProperty("description", "Оптимальный интернет-магазин");
 $APPLICATION->SetTitle("Каталог");
 $APPLICATION->IncludeComponent(
 	"bitrix:catalog", 

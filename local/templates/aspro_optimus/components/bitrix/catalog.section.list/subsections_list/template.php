@@ -31,13 +31,13 @@
 								</li>
 							</ul>
 							<?$arSection = $section=COptimusCache::CIBlockSection_GetList(array('CACHE' => array("MULTI" =>"N", "TAG" => COptimusCache::GetIBlockCacheTag($arParams["IBLOCK_ID"]))), array('GLOBAL_ACTIVE' => 'Y', "ID" => $arItems["ID"], "IBLOCK_ID" => $arParams["IBLOCK_ID"]), false, array("ID", $arParams["SECTIONS_LIST_PREVIEW_PROPERTY"]));?>
-							<div class="desc" ><span class="desc_wrapp">
+							<?/*?><div class="desc" ><span class="desc_wrapp">
 								<?if ($arSection[$arParams["SECTIONS_LIST_PREVIEW_PROPERTY"]]):?>
 									<?=$arSection[$arParams["SECTIONS_LIST_PREVIEW_PROPERTY"]]?>
 								<?else:?>
 									<?=$arItems["DESCRIPTION"]?>
 								<?endif;?>
-							</span></div>
+							</span></div><?*/?>
 						</td>
 					</tr>
 				</table>
