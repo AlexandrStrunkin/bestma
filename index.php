@@ -1,5 +1,7 @@
 <?
 require($_SERVER["DOCUMENT_ROOT"]."/bitrix/header.php");
+$APPLICATION->SetPageProperty("description", "Оптовый интернет-магазин аксессуаров для мобильных телефонов. Купить аксессуары для телефонов оптом всех брендов и моделей. Оптовые продажи аксессуаров для мобильных в Москве");
+$APPLICATION->SetPageProperty("title", "Аксессуары для сотовых телефонов оптом в Москве - BESTMA");
 $APPLICATION->SetTitle("Аксессуары для сотовых телефонов оптом - BESTMA");
 ?>
 

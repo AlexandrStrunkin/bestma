@@ -1,6 +1,7 @@
 <?require($_SERVER["DOCUMENT_ROOT"]."/bitrix/header.php");
-$APPLICATION->SetPageProperty("description", "Оптимальный интернет-магазин");
-$APPLICATION->SetTitle("Каталог");
+$APPLICATION->SetPageProperty("title", "Чехлы для планшетов оптом. Купить оптом чехол для планшета любой марки");
+$APPLICATION->SetPageProperty("description", "Оптовая продажа чехлов для планшетов. Купить чехол для планшета оптом от 246.00 руб. в интернет магазине BESTMA. В наличии чехлы для планшетов всех производителей оптом в Москве");
+$APPLICATION->SetTitle("Аккумуляторы для телефонов");
 $APPLICATION->IncludeComponent(
 	"bitrix:catalog", 
 	"main", 
