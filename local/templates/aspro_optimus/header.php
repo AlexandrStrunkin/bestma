@@ -22,9 +22,11 @@ $htmlClass = ($_REQUEST && isset($_REQUEST['print']) ? 'print' : false);
     <?$APPLICATION->AddHeadString('<script src="/local/templates/aspro_optimus/js/clamp.min.js"></script>');?>
     <?if(CModule::IncludeModule("aspro.optimus")) {COptimus::Start(SITE_ID);}?>
     <!--[if gte IE 9]><style type="text/css">.basket_button, .button30, .icon {filter: none;}</style><![endif]-->
+
     <?if($_GET["PAGEN_1"]){?>
         <link rel="canonical" href="<?=$_SERVER["SCRIPT_URI"]?>" />
     <?}?>
+
     <link href='<?=CMain::IsHTTPS() ? 'https' : 'http'?>://fonts.googleapis.com/css?family=Ubuntu:400,500,700,400italic&subset=latin,cyrillic' rel='stylesheet' type='text/css'>
 </head>
     <body id="main">
