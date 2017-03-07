@@ -22,6 +22,9 @@ $htmlClass = ($_REQUEST && isset($_REQUEST['print']) ? 'print' : false);
     <?$APPLICATION->AddHeadString('<script src="/local/templates/aspro_optimus/js/clamp.min.js"></script>');?>
     <?if(CModule::IncludeModule("aspro.optimus")) {COptimus::Start(SITE_ID);}?>
     <!--[if gte IE 9]><style type="text/css">.basket_button, .button30, .icon {filter: none;}</style><![endif]-->
+    <?if($_GET["PAGEN_1"]){?>
+        <link rel="canonical" href="<?=$_SERVER["SCRIPT_URI"]?>" />
+    <?}?>
     <link href='<?=CMain::IsHTTPS() ? 'https' : 'http'?>://fonts.googleapis.com/css?family=Ubuntu:400,500,700,400italic&subset=latin,cyrillic' rel='stylesheet' type='text/css'>
 </head>
     <body id="main">
@@ -111,10 +114,10 @@ $htmlClass = ($_REQUEST && isset($_REQUEST['print']) ? 'print' : false);
                                                 "EDIT_TEMPLATE" => "standard.php"
                                             ),
                                             false
-                                        );?>    
+                                        );?>
                                     </div>
                                 </td>
-                                <td  class="center_block">                                                                    
+                                <td  class="center_block">
                                     <div class="search">
                                         <?$APPLICATION->IncludeComponent("bitrix:main.include", ".default",
                                             array(
@@ -156,7 +159,7 @@ $htmlClass = ($_REQUEST && isset($_REQUEST['print']) ? 'print' : false);
                                                         "EDIT_TEMPLATE" => "standard.php"
                                                     ),
                                                     false
-                                                );?>                                                
+                                                );?>
                                             </div>
                                         </div>
                                     <?}else{?>
@@ -171,7 +174,7 @@ $htmlClass = ($_REQUEST && isset($_REQUEST['print']) ? 'print' : false);
                                                     "EDIT_TEMPLATE" => "standard.php"
                                                 ),
                                                 false
-                                            );?>                                            
+                                            );?>
                                         </div>
                                         <div class="middle_phone">
                                             <div class="phones">
@@ -221,7 +224,7 @@ $htmlClass = ($_REQUEST && isset($_REQUEST['print']) ? 'print' : false);
                                             false
                                         );?>
                                 </div></li>
-                                </ul>                
+                                </ul>
                                 <div class="catalog_menu_ext">
                                     <?$APPLICATION->IncludeComponent("bitrix:main.include", ".default",
                                         array(
@@ -258,8 +261,8 @@ $htmlClass = ($_REQUEST && isset($_REQUEST['print']) ? 'print' : false);
                     <?if(!COptimus::IsOrderPage() && !COptimus::IsBasketPage()){?>
                         <div class="left_block">
                             <?$APPLICATION->IncludeComponent(
-    "bitrix:main.include", 
-    ".default", 
+    "bitrix:main.include",
+    ".default",
     array(
         "COMPONENT_TEMPLATE" => ".default",
         "PATH" => SITE_DIR."include/left_block/menu.left_menu.php",
@@ -271,7 +274,7 @@ $htmlClass = ($_REQUEST && isset($_REQUEST['print']) ? 'print' : false);
         "COMPOSITE_FRAME_TYPE" => "AUTO"
     ),
     false
-);?>                    
+);?>
 
                             <?$APPLICATION->ShowViewContent('left_menu');?>
 
@@ -298,8 +301,8 @@ $htmlClass = ($_REQUEST && isset($_REQUEST['print']) ? 'print' : false);
                                 false
                             );?>
                             <?$APPLICATION->IncludeComponent(
-    "bitrix:main.include", 
-    "front", 
+    "bitrix:main.include",
+    "front",
     array(
         "COMPONENT_TEMPLATE" => "front",
         "PATH" => SITE_DIR."include/left_block/comp_news.php",
@@ -329,8 +332,8 @@ $htmlClass = ($_REQUEST && isset($_REQUEST['print']) ? 'print' : false);
                             <?if(!COptimus::IsMainPage()):?>
                                 <div class="container">
                                     <?$APPLICATION->IncludeComponent(
-    "bitrix:breadcrumb", 
-    "optimus", 
+    "bitrix:breadcrumb",
+    "optimus",
     array(
         "START_FROM" => "0",
         "PATH" => "",
@@ -342,6 +345,6 @@ $htmlClass = ($_REQUEST && isset($_REQUEST['print']) ? 'print' : false);
     ),
     false
 );?>
-                                    <h1 id="pagetitle"><?=$APPLICATION->ShowTitle(false);?></h1>                                
+                                    <h1 id="pagetitle"><?=$APPLICATION->ShowTitle(false);?></h1>
                             <?endif;?>
 <?if(isset($_SERVER["HTTP_X_REQUESTED_WITH"]) && strtolower($_SERVER['HTTP_X_REQUESTED_WITH']) == "xmlhttprequest") $APPLICATION->RestartBuffer();?>
