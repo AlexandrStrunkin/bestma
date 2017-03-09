@@ -69,7 +69,7 @@ $OptimusSectionID = $arSection["ID"];?>
 	<?$APPLICATION->AddViewContent('left_menu', $html);?>
 <?}?>
 <div class="right_block1 clearfix catalog <?=strtolower($TEMPLATE_OPTIONS["TYPE_VIEW_FILTER"]["CURRENT_VALUE"]);?>" id="right_block_ajax">
-	
+
 	<?$isAjax="N";?>
 	<?if(isset($_SERVER["HTTP_X_REQUESTED_WITH"]) && strtolower($_SERVER['HTTP_X_REQUESTED_WITH']) == "xmlhttprequest"  && isset($_GET["ajax_get"]) && $_GET["ajax_get"] == "Y" || (isset($_GET["ajax_basket"]) && $_GET["ajax_basket"]=="Y")){
 		$isAjax="Y";
@@ -83,21 +83,11 @@ $OptimusSectionID = $arSection["ID"];?>
 		</div>
 	<?}else{?>
 		<div class="js_filter filter_horizontal">
-			<div class="bx_filter bx_filter_vertical"></div>			
+			<div class="bx_filter bx_filter_vertical"></div>
 		</div>
 	<?}?>
 	<div class="inner_wrapper">
-		<?if($posSectionDescr=="TOP"){?>
-			<?if ($arSection["DESCRIPTION"]):?>
-				<div class="group_description_block top">
-					<div><?=$arSection["DESCRIPTION"]?></div>
-				</div>
-			<?elseif($arSection["UF_SECTION_DESCR"]):?>
-				<div class="group_description_block top">
-					<div><?=$arSection["UF_SECTION_DESCR"]?></div>
-				</div>
-			<?endif;?>
-		<?}?>
+
 		<?if('Y' == $arParams['USE_FILTER']):?>
 			<div class="adaptive_filter">
 				<a class="filter_opener<?=($_REQUEST["set_filter"] == "y" ? " active" : "")?>"><i></i><span><?=GetMessage("CATALOG_SMART_FILTER_TITLE")?></span></a>
@@ -115,7 +105,7 @@ $OptimusSectionID = $arSection["ID"];?>
 			$frame->begin();?>
 		<?}?>
 		<?include_once("sort.php");?>
-		
+
 		<?if($isAjax=="Y"){
 			$APPLICATION->RestartBuffer();
 		}?>
@@ -154,7 +144,7 @@ $OptimusSectionID = $arSection["ID"];?>
 					'OFFER_TREE_PROPS' => $arParams['OFFER_TREE_PROPS'],
 
 					"OFFERS_LIMIT" => $arParams["LIST_OFFERS_LIMIT"],
-					
+
 					"SECTION_URL" => $arResult["FOLDER"].$arResult["URL_TEMPLATES"]["section"],
 					"DETAIL_URL" => $arResult["FOLDER"].$arResult["URL_TEMPLATES"]["element"],
 					"BASKET_URL" => $arParams["BASKET_URL"],
@@ -228,7 +218,7 @@ $OptimusSectionID = $arSection["ID"];?>
 					"PRODUCT_PROPERTIES" => $arParams["PRODUCT_PROPERTIES"],
 					"SALE_STIKER" => $arParams["SALE_STIKER"],
 					"SHOW_RATING" => $arParams["SHOW_RATING"],
-                    
+
                     "RECOMENDED_RETAIL_PRICE" => $arParams["RECOMENDED_RETAIL_PRICE"],
 				), $component, array("HIDE_ICONS" => $isAjax)
 			);?>
@@ -253,5 +243,16 @@ $OptimusSectionID = $arSection["ID"];?>
 		<?if($isAjax=="Y"){
 			die();
 		}?>
+        <?if($posSectionDescr=="TOP"){?>
+            <?if ($arSection["DESCRIPTION"]):?>
+                <div class="group_description_block top">
+                    <div><?=$arSection["DESCRIPTION"]?></div>
+                </div>
+            <?elseif($arSection["UF_SECTION_DESCR"]):?>
+                <div class="group_description_block top">
+                    <div><?=$arSection["UF_SECTION_DESCR"]?></div>
+                </div>
+            <?endif;?>
+        <?}?>
 	</div>
 </div>
